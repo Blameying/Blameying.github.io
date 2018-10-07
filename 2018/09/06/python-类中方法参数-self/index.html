@@ -24,10 +24,13 @@
     <meta http-equiv="x-dns-prefetch-control" content="on">
 
 
+    <link rel="dns-prefetch" href="https://cdn1.lncld.net"/>
 
 
 
-    <link rel="dns-prefetch" href="https://imsun.github.io"/>
+
+    <link rel="dns-prefetch" href="https://cdn1.lncld.net"/>
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net"/>
 
 
 
@@ -542,30 +545,28 @@
                 <!-- Post Comments -->
                 
                     
-    <!-- 使用 gitcoment -->
-<div id="gitment-comment">
-    <!-- Gitment 评论框 -->
-<div id="container"></div>
-</div>
-<style>
-    #gitment-comment{
-        background-color: #eee;
-        padding: 2pc;
-    }
-</style>
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+    <div id="comment" style='padding:10px;' class="vcomment"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
 <script>
-    var gitment = new Gitment({
-        id: 'http://note.xblame.top/2018/09/06/python-类中方法参数-self/', // 可选。默认为 location.href
-        owner: 'Blameying',
-        repo: 'https://github.com/Blameying/blameying.github.io',
-        oauth: {
-            client_id: '51147e3093435e5e547a',
-            client_secret: 'f7219d3553e3743df9969a1b220a826d1d6ca791',
-        },
-    })
-    gitment.render('container')
+    var GUEST_INFO = ['nick','mail','link'];
+    var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+        return GUEST_INFO.indexOf(item) > -1
+    });
+    var notify = 'false' === 'true';
+    var verify = 'false' === 'true';
+    new Valine({
+        el: '.vcomment',
+        notify: notify,
+        verify: verify,
+        appId: "amc0aBm93HuG7hcWTiNAOdW5-gzGzoHsz",
+        appKey: "DmgSkD2UvcamdfYSISbBEUSa",
+        placeholder: "Just go go",
+        pageSize:'10',
+        avatar:'identicon',
+        lang:'zh-cn',
+        guest_info: guest_info
+    });
 </script>
 
 
@@ -889,7 +890,7 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
 
-   <!-- Gitment -->
+   
 
 
 
