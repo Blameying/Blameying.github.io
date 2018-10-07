@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>XBlame</title>
+  
+  <subtitle>XBlame&#39;s Personal Blog</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://note.xblame.top/"/>
+  <updated>2018-10-07T04:47:08.063Z</updated>
+  <id>http://note.xblame.top/</id>
+  
+  <author>
+    <name>XBlame</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>初识 Vue.js 时的心理活动</title>
+    <link href="http://note.xblame.top/2018/10/03/%E5%88%9D%E8%AF%86-Vue-js-%E6%97%B6%E7%9A%84%E5%BF%83%E7%90%86%E6%B4%BB%E5%8A%A8/"/>
+    <id>http://note.xblame.top/2018/10/03/初识-Vue-js-时的心理活动/</id>
+    <published>2018-10-03T07:51:37.000Z</published>
+    <updated>2018-10-07T04:47:08.063Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;在大学参与的小项目或者作业中总是当那个写后端的角色，前后林林总总用了各式框架和各种语言，包括java, python-flask, ruby on
+        
+      
+    
+    </summary>
+    
+      <category term="代码" scheme="http://note.xblame.top/categories/%E4%BB%A3%E7%A0%81/"/>
+    
+    
+      <category term="vue" scheme="http://note.xblame.top/tags/vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MRB主引导记录</title>
+    <link href="http://note.xblame.top/2018/09/25/MRB%E4%B8%BB%E5%BC%95%E5%AF%BC%E8%AE%B0%E5%BD%95/"/>
+    <id>http://note.xblame.top/2018/09/25/MRB主引导记录/</id>
+    <published>2018-09-25T07:08:13.000Z</published>
+    <updated>2018-10-07T04:45:00.263Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;这几天因为一直在看操作系统和文件系统相关的书，了解到了MBR的作用的结构，记录一下。&lt;br&gt;MBR(master boot
+        
+      
+    
+    </summary>
+    
+      <category term="操作系统" scheme="http://note.xblame.top/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Archlinux 声音配置</title>
+    <link href="http://note.xblame.top/2018/09/13/Archlinux-%E5%A3%B0%E9%9F%B3%E9%85%8D%E7%BD%AE/"/>
+    <id>http://note.xblame.top/2018/09/13/Archlinux-声音配置/</id>
+    <published>2018-09-13T00:08:07.000Z</published>
+    <updated>2018-10-07T04:26:03.573Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Archlinux 通常使用alsa管理声音，需要安装alsa-utils包&lt;br&gt;安装完是默认静音的。需要执行&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-shell line-numbers&quot;&gt;amixer sset Master
+        
+      
+    
+    </summary>
+    
+      <category term="疑难杂症" scheme="http://note.xblame.top/categories/%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87/"/>
+    
+    
+      <category term="alsamixer,Archlinux,声音" scheme="http://note.xblame.top/tags/alsamixer-Archlinux-%E5%A3%B0%E9%9F%B3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>grub 提示: Failed to connect to lvmetad……</title>
+    <link href="http://note.xblame.top/2018/09/13/grub-%E6%8F%90%E7%A4%BA-Failed-to-connect-to-lvmetad%E2%80%A6%E2%80%A6/"/>
+    <id>http://note.xblame.top/2018/09/13/grub-提示-Failed-to-connect-to-lvmetad……/</id>
+    <published>2018-09-12T23:37:56.000Z</published>
+    <updated>2018-10-07T04:23:36.543Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;编辑 /etc/lvm/lvm.conf&lt;br&gt;找到 use_lvmetad = 1&lt;br&gt;将其修改为&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash line-numbers&quot;&gt;use_lvmetad =
+        
+      
+    
+    </summary>
+    
+      <category term="疑难杂症" scheme="http://note.xblame.top/categories/%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87/"/>
+    
+    
+      <category term="grub" scheme="http://note.xblame.top/tags/grub/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Rails-理解</title>
+    <link href="http://note.xblame.top/2018/09/11/Rails-%E7%90%86%E8%A7%A3/"/>
+    <id>http://note.xblame.top/2018/09/11/Rails-理解/</id>
+    <published>2018-09-11T04:34:24.000Z</published>
+    <updated>2018-10-07T04:43:46.133Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Rail
+        
+      
+    
+    </summary>
+    
+      <category term="代码" scheme="http://note.xblame.top/categories/%E4%BB%A3%E7%A0%81/"/>
+    
+    
+      <category term="Rails" scheme="http://note.xblame.top/tags/Rails/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python 类中方法参数 self</title>
+    <link href="http://note.xblame.top/2018/09/06/python-%E7%B1%BB%E4%B8%AD%E6%96%B9%E6%B3%95%E5%8F%82%E6%95%B0-self/"/>
+    <id>http://note.xblame.top/2018/09/06/python-类中方法参数-self/</id>
+    <published>2018-09-06T06:50:00.000Z</published>
+    <updated>2018-10-07T04:22:00.320Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3&gt;内存&lt;/h3&gt;
+
+&lt;p&gt;Python
+        
+      
+    
+    </summary>
+    
+      <category term="代码" scheme="http://note.xblame.top/categories/%E4%BB%A3%E7%A0%81/"/>
+    
+    
+      <category term="class,python,self" scheme="http://note.xblame.top/tags/class-python-self/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Rails 多对多 自联结 建立好友关系表</title>
+    <link href="http://note.xblame.top/2018/09/03/Rails-%E5%A4%9A%E5%AF%B9%E5%A4%9A-%E8%87%AA%E8%81%94%E7%BB%93-%E5%BB%BA%E7%AB%8B%E5%A5%BD%E5%8F%8B%E5%85%B3%E7%B3%BB%E8%A1%A8-md/"/>
+    <id>http://note.xblame.top/2018/09/03/Rails-多对多-自联结-建立好友关系表-md/</id>
+    <published>2018-09-03T12:00:00.000Z</published>
+    <updated>2018-10-07T04:17:08.463Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3&gt;Model&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-Ruby &quot;&gt;class User &amp;lt; ApplicationRecord
+has_many :a_friends, class_name:
+        
+      
+    
+    </summary>
+    
+      <category term="代码" scheme="http://note.xblame.top/categories/%E4%BB%A3%E7%A0%81/"/>
+    
+    
+      <category term="rails,多对多,自联结,好友关系" scheme="http://note.xblame.top/tags/rails-%E5%A4%9A%E5%AF%B9%E5%A4%9A-%E8%87%AA%E8%81%94%E7%BB%93-%E5%A5%BD%E5%8F%8B%E5%85%B3%E7%B3%BB/"/>
+    
+  </entry>
+  
+</feed>

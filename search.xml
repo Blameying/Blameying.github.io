@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+    
+    <entry>
+      <title>初识 Vue.js 时的心理活动</title>
+      <link href="/2018/10/03/%E5%88%9D%E8%AF%86-Vue-js-%E6%97%B6%E7%9A%84%E5%BF%83%E7%90%86%E6%B4%BB%E5%8A%A8/"/>
+      <url>/2018/10/03/%E5%88%9D%E8%AF%86-Vue-js-%E6%97%B6%E7%9A%84%E5%BF%83%E7%90%86%E6%B4%BB%E5%8A%A8/</url>
+      
+        <content type="html"><![CDATA[<p>在大学参与的小项目或者作业中总是当那个写后端的角色，前后林林总总用了各式框架和各种语言，包括java, python-flask, ruby on rails,总觉得视觉设计很炫酷，视觉的美感比较直接和强烈，也更容易被人共鸣。你想一个普通人看到你写的代码是不可能说：哇，这真是太美了。这点真的很难，很多写代码很多年的人也不会有这种美感。所以说这么多，总而言之，我想学一些前端，不是为了工作，而是为了自己在自娱自乐的时候用更多发挥的空间。</p><p>以前也看过javascript,html,css的相关知识，但你要说实战的时候能信手拈来还差的远。但这个东西吧，思想上很难接触，html，css是纯标记的语言，让人感觉死板和本身的工具性特别浓厚。排版啊，样式啊，是这些东西，而不是传统后端的逻辑。我不太想学javascript，可能是我从它的形式里很难找到美感吧，个人感受。</p><p>在合作完成作业的时候，做前端的同学用到了vue.js，我虽然早有耳闻，但没有这种亲身接触的印象深刻。首先，我觉得这个框架设计的很清晰，解决了很多人们不需要关心的问题。于是我去<a href="https://cn.vuejs.org/" target="_blank" rel="noopener">vue官网</a>看完了大半的文档。但是，却难以有整体的把握，后来在youtube上看了个60分钟介绍的短片，又自己做了一个toy project，这才感觉可以上手了。</p><p>那么说一下当下的理解。</p><p>关于v-if v-for之类的在理解上没有什么问题。关键是模板模块和路由。vue为了提高代码的重复利用，允许用户把代码分成一个个模块，那么在构建一个新的网页的时候如果有需要的组件可以直接拿过来用。一个网站的不同网页为了保持样式的统一肯定有很多部分需要在不同的网页中重复利用，这样可以直接在父元素中包含这个组件。组件之间允许嵌套。组件之间可以通过props传递变量。每一个组件就是一个小的页面，在这个组件的vue文件中可以直接定义自己js和css。使得整个工程的结构清晰。一张网页就可以看成一张画纸，组件就是拼图，就看怎么摆放了。<br><br><br><img src="http://pbn2nc8d5.bkt.clouddn.com/github/blog/10-03-1.jpgtimg%20%281%29.jpeg" alt=""><br><br><br>做的一个样例，列表内容临时去<a href="https://www.jianshu.com/" target="_blank" rel="noopener">简书</a>摘的，应该看不清吧。</p><p><img src="http://pbn2nc8d5.bkt.clouddn.com/vu1.png" alt=""></p><pre><code class="language-javascript line-numbers">&lt;template&gt;    &lt;div class="HomePage"&gt;        &lt;div class="person"&gt;            &lt;img class="headico" v-bind:src="user.headico"&gt;            &lt;h3 class="username"&gt;{{user.username}}&lt;/h3&gt;            &lt;p&gt;{{user.info}}&lt;/p&gt;        &lt;/div&gt;        &lt;articlelistitem&gt;&lt;/articlelistitem&gt;    &lt;/div&gt;&lt;/template&gt;&lt;script&gt;import ArticleListItem from './ArticleListItem.vue'export default {  name: 'HomePage',  data () {    return {      user: {        headico: 'http://img4.duitang.com/uploads/item/201411/09/20141109142633_ncKBY.thumb.700_0.jpeg',        username: 'Xblame',        info: '一个简单的读书人'      }    }  },  components: {    'articlelistitem': ArticleListItem  }}&lt;/script&gt;&lt;style scoped&gt;.headico {    width: 100px;    height: 100px;    border-radius: 50px;}&lt;/style&gt;</code></pre><p>这其实是一个HomePage的组件，就是图上的用户头像，姓名，信息那一块。下面的列表是一个单独的模块ArticleListItem，HomePage中引用了它。</p><p>一个网站的路由是比较核心的功能，路由就是通向一个网页的链接，比如对于一个母版的网页，中间包含了一个组件，那么针对不同的链接可以通过路由更换其中的组件，首先vue有一个总的路由，这个路由可以通向各个大的组件，但一个复杂的网页中，大的组件势必包含一些小的组件，这个时候需要嵌套路由。举个例子：</p><p><strong>访问一个网站的域名，也就是访问其根目录，首先route根据你定义的根目录渲染那个模块，如果这个模块还包含一个&lt;router-view/&gt;的路由入口,比如你想让ArticleListItem插入在这，你就需要访问/articlelistitem,即在父组件的路由路径后加上自己的路由路径。</strong></p><p>不建议嵌套很多层，根据在其他领域得到的经验。层次结构超过一定限度会极大增加复杂度，尽可能转化成平面结构。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 代码 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> vue </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>MRB主引导记录</title>
+      <link href="/2018/09/25/MRB%E4%B8%BB%E5%BC%95%E5%AF%BC%E8%AE%B0%E5%BD%95/"/>
+      <url>/2018/09/25/MRB%E4%B8%BB%E5%BC%95%E5%AF%BC%E8%AE%B0%E5%BD%95/</url>
+      
+        <content type="html"><![CDATA[<p>这几天因为一直在看操作系统和文件系统相关的书，了解到了MBR的作用的结构，记录一下。<br>MBR(master boot record)主引导记录位于存储设备的绝对零扇区，这里的绝对零扇区是指物理上的起点。MBR整个结构共占用<strong>512</strong>Byte。接下来用一个C语言结构体来表示一下</p><pre><code class="language-c line-numbers">struct MBR{    uint8 PartCode[446];    //MBR引导程序    struct Partition DPT[4];    //四个分区信息    uint8 BootSectSig0;     //55    uint8 BootSectSig1;     //AA};/* 55 AA 在最后两个字节，小端字序，真实值为AA55,代表正常扇区结束。*/struct Partition{    uint8 Active;   //引导指示符，指明次分区是否是活动分区，取值为0x80，说明可以引导操作系统，通常取0    uint8 StartHead;    //分区的开始扇头    uint16 StartCylSect;    //开始柱面和扇区，前6位为开始扇区，后10位为开始柱面    uint8 PartType;     //分区类型    uint8 EndHead;  //分区的结束头    uint16 EndCylSect;  //结束柱面与扇区，前6位为结束扇区，后10位为结束柱面    uint32 StartLBA;    //分区的第一个扇区地址    uint32 TotalSector; //分区的总扇区数};</code></pre><blockquote><br>  该处出自 《嵌入式FAT32文件系统设计与实现》于振南 编著<br></blockquote><p>DPT(Disk Partition Table ) 磁盘分区表</p><p>开始的446个字节的是一段引导代码。简单来说是一段 程序，在计算机上电以后，<a href="https://baike.baidu.com/item/bios" target="_blank" rel="noopener">BIOS</a>(Base Input Output System 基本输入输出系统)会自动读取MBR的前446个字节，然后执行这段代码，这段代码会对mbr区后面的分区信息的代码进行读取分析，找到分区信息，根据分区信息找到需要引导的操作系统的程序，进而启动操作系统。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 操作系统 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>Archlinux 声音配置</title>
+      <link href="/2018/09/13/Archlinux-%E5%A3%B0%E9%9F%B3%E9%85%8D%E7%BD%AE/"/>
+      <url>/2018/09/13/Archlinux-%E5%A3%B0%E9%9F%B3%E9%85%8D%E7%BD%AE/</url>
+      
+        <content type="html"><![CDATA[<p>Archlinux 通常使用alsa管理声音，需要安装alsa-utils包<br>安装完是默认静音的。需要执行</p><pre><code class="language-shell line-numbers">amixer sset Master unmute</code></pre><p>如果提示：amixer: Unable to find simple control ‘Master’,0<br>则表示不能找到声卡设备需要继续配置<br>执行命令获取声卡的声卡ID和设备ID</p><pre><code class="language-shell line-numbers">aplay -l</code></pre><p>结果如下</p><pre><code class="language-shell line-numbers">**** List of PLAYBACK Hardware Devices ****card 0: HDMI [HDA Intel HDMI], device 3: HDMI 0 [HDMI 0]  Subdevices: 1/1  Subdevice #0: subdevice #0card 0: HDMI [HDA Intel HDMI], device 7: HDMI 1 [HDMI 1]  Subdevices: 1/1  Subdevice #0: subdevice #0card 0: HDMI [HDA Intel HDMI], device 8: HDMI 2 [HDMI 2]  Subdevices: 1/1  Subdevice #0: subdevice #0card 0: HDMI [HDA Intel HDMI], device 9: HDMI 3 [HDMI 3]  Subdevices: 1/1  Subdevice #0: subdevice #0card 0: HDMI [HDA Intel HDMI], device 10: HDMI 4 [HDMI 4]  Subdevices: 1/1  Subdevice #0: subdevice #0card 1: PCH [HDA Intel PCH], device 0: ALC282 Analog [ALC282 Analog]  Subdevices: 0/1  Subdevice #0: subdevice #0</code></pre><p>把下列配置添加到系统级别的 /etc/asound.conf 或用户级别的 ~/.asoundrc 文件。如果文件不存在，可以手动创建。其中的各个ID，根据实际情况调整：</p><pre><code class="language-shell line-numbers">defaults.pcm.card 1   #根据上面输出的信息，ALC282是我的设备，选择card=1defaults.pcm.device 0 #device 为0defaults.ctl.card 1  #决定哪个声卡能由alsamixer控制</code></pre><p>同时，对于i3wm,fluxbox之类的wm（窗口管理器），而不是DE(Desktop environment),往往需要自己设置音量快捷键<br>这里给出i3的例子（编辑~/.config/i3/config）文件</p><pre><code class="language-shell line-numbers">#设置静音bindsym XF86AudioMute exec "amixer -q sset Master,0 toggle"#设置音量调节bindsym XF86AudioRaiseVolume exec --no-startup-id  amixer -c 0 set Master 3%+bindsym XF86AudioLowerVolume exec --no-startup-id  amixer -c 0 set Master 3%-</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 疑难杂症 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> alsamixer,Archlinux,声音 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>grub 提示: Failed to connect to lvmetad……</title>
+      <link href="/2018/09/13/grub-%E6%8F%90%E7%A4%BA-Failed-to-connect-to-lvmetad%E2%80%A6%E2%80%A6/"/>
+      <url>/2018/09/13/grub-%E6%8F%90%E7%A4%BA-Failed-to-connect-to-lvmetad%E2%80%A6%E2%80%A6/</url>
+      
+        <content type="html"><![CDATA[<p>编辑 /etc/lvm/lvm.conf<br>找到 use_lvmetad = 1<br>将其修改为</p><pre><code class="language-bash line-numbers">use_lvmetad = 0</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 疑难杂症 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> grub </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>Rails-理解</title>
+      <link href="/2018/09/11/Rails-%E7%90%86%E8%A7%A3/"/>
+      <url>/2018/09/11/Rails-%E7%90%86%E8%A7%A3/</url>
+      
+        <content type="html"><![CDATA[<p>Rail 核心目录在于app下面的model,controller,view<br><br><br>是经典的MVC结构，以Model数据为中心，Model通过ActiveRecord模块与数据库连接，不需要自己在Model里定义变量和getter，setter之类的在java中常写的存取函数，只需要在db/migrate目录中定义同名数据库表，接下来便开始忽略与数据库相关的事，暂时将其透明化。controller负责定义一系列与数据相关的动作，组织数据，生成视图。即负责链接数据和视图。<br><br><br>route.rb 负责链接url和controller</p><p><img src="http://pbn2nc8d5.bkt.clouddn.com/github/blog/10-03-3.jpgrails%E7%90%86%E8%A7%A3.png" alt=""></p><p>view 中指定的视图应当与其在controller中对应的动作存在共享实例变量和几个全局变量，进行数据的交互。</p><p>controller 和 view 的对应关系，model和数据库的对应关系使用约定。一开始觉得体系庞大，难以掌控，我觉得不妨先观察，然后思考，不知所以然的照着教程写一遍不利用后面摆脱固定的模式限制进行自定义。不妨多些勇敢，多尝试，不用觉得与示范做法不一样，这样才能真正的使用。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 代码 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Rails </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>python 类中方法参数 self</title>
+      <link href="/2018/09/06/python-%E7%B1%BB%E4%B8%AD%E6%96%B9%E6%B3%95%E5%8F%82%E6%95%B0-self/"/>
+      <url>/2018/09/06/python-%E7%B1%BB%E4%B8%AD%E6%96%B9%E6%B3%95%E5%8F%82%E6%95%B0-self/</url>
+      
+        <content type="html"><![CDATA[<h3>内存</h3><p>Python 类在内存中的实现是类有自己的一个空间，存放类中的定义的变量和方法，在声明一个实例的时候，为该实例分配一块新的空间，但仍有引用指向类，这也是大部分面向对象的设计方法，对大家都有的东西只存在一份。当实例变量中的变量绑定新的值，或是方法覆写这些自己独有的东西存放在自己的空间里。当多个实例变量去访问同一个函数，这个函数如果没有被覆写应当是在类空间里的。那这个方法自然而然就需要区分是哪个实例调用的自己。在这里，python为了精确，需要手动声明这个需要传递的实例的引用。</p><h3>为什么是self?</h3><p>self其实是一种约定俗称的写法，因为传递实例变量引用的这个过程是自动的，python会自动把引用填入第一个参数，所以，python类的实例方法至少接受一个参数。python只接受第一个参数，而不管这个参数的名字，所以可用任何一个单词替换self，但self意义比较明显，所以大家习惯用self。</p><blockquote><br>  Often, the first argument of a method is called self. This is nothing more than a convention: the name self has absolutely no special meaning to Python. Note, however, that by not following the convention your code may be less readable to other Python programmers, and it is also conceivable that a class browser program might be written that relies upon such a convention<br>  —-Python Document<br></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 代码 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> class,python,self </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>Rails 多对多 自联结 建立好友关系表</title>
+      <link href="/2018/09/03/Rails-%E5%A4%9A%E5%AF%B9%E5%A4%9A-%E8%87%AA%E8%81%94%E7%BB%93-%E5%BB%BA%E7%AB%8B%E5%A5%BD%E5%8F%8B%E5%85%B3%E7%B3%BB%E8%A1%A8-md/"/>
+      <url>/2018/09/03/Rails-%E5%A4%9A%E5%AF%B9%E5%A4%9A-%E8%87%AA%E8%81%94%E7%BB%93-%E5%BB%BA%E7%AB%8B%E5%A5%BD%E5%8F%8B%E5%85%B3%E7%B3%BB%E8%A1%A8-md/</url>
+      
+        <content type="html"><![CDATA[<h3>Model</h3><pre><code class="language-Ruby ">class User &lt; ApplicationRecordhas_many :a_friends, class_name: "Friendship",foreign_key: :request_friend_idhas_many :r_friends, class_name: "Friendship",foreign_key: :answer_friend_idhas_many :answer_friends , class_name:"User" ,through: :a_friendshas_many :request_friends,class_name: "User" ,through: :r_friendsend</code></pre><h3>联结表</h3><pre><code class="language-Ruby ">class Friendship &lt; ApplicationRecordbelongs_to :request_friend,class_name: "User"belongs_to :answer_friend,class_name: "User"end</code></pre><h3>迁移</h3><pre><code class="language-Ruby ">class CreateFriendships &lt; ActiveRecord::Migration[5.2]def changecreate_table :friendships do |t|t.integer :request_friend_idt.integer :answer_friend_idt.timestampsendendend</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 代码 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> rails,多对多,自联结,好友关系 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+  
+  
+    
+  
+</search>
