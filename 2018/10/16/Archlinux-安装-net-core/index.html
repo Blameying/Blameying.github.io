@@ -258,7 +258,7 @@
 
     
         <meta property="article:published_time" content="Tue Oct 16 2018 20:55:13 GMT+0800">
-        <meta property="article:modified_time" content="Tue Oct 16 2018 21:15:43 GMT+0800">
+        <meta property="article:modified_time" content="Tue Oct 16 2018 21:22:29 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -281,7 +281,7 @@
     "mainEntityOfPage": "http://note.xblame.top/2018/10/16/Archlinux-安装-net-core/index.html",
     "headline": "Archlinux 安装.net core",
     "datePublished": "Tue Oct 16 2018 20:55:13 GMT+0800",
-    "dateModified": "Tue Oct 16 2018 21:15:43 GMT+0800",
+    "dateModified": "Tue Oct 16 2018 21:22:29 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "XBlame",
@@ -507,15 +507,19 @@
 <pre><code class="bash">cd YouProjectName
 dotnet run
 </code></pre>
-<p>但是在我这边除了些问题，提示如下：</p>
+<p>但是在我这边出了些问题，提示如下：</p>
 <blockquote>
-<p>System.InvalidOperationException: Unable to configure HTTPS endpoint. No server certificate was specified, and the default developer certificate could not be found.To generate a developer certificate run ‘dotnet dev-certs https’. To trust the certificate (Windows and macOS only) run ‘dotnet dev-certs https –trust’. For more information on configuring HTTPS see <a href="https://go.microsoft.com/fwlink/?linkid=848054" target="_blank" rel="noopener">https://go.microsoft.com/fwlink/?linkid=848054</a>.<br>解决方案如下：</p>
+<p>System.InvalidOperationException: Unable to configure HTTPS endpoint. No server certificate was specified, and the default developer certificate could not be found.To generate a developer certificate run ‘dotnet dev-certs https’. To trust the certificate (Windows and macOS only) run ‘dotnet dev-certs https –trust’. For more information on configuring HTTPS see <a href="https://go.microsoft.com/fwlink/?linkid=848054" target="_blank" rel="noopener">https://go.microsoft.com/fwlink/?linkid=848054</a>.</p>
+</blockquote>
+<p>解决方案如下：</p>
 <pre><code class="bash">dotnet tool install --global dotnet-dev-certs
 </code></pre>
 <p>然后执行</p>
 <pre><code class="bash">dotnet dev-certs https
 </code></pre>
-<p>如果提示错误：<br>A fatal error occurred, the required library libhostfxr.so</p>
+<p>如果提示错误：</p>
+<blockquote>
+<p>A fatal error occurred, the required library libhostfxr.so</p>
 </blockquote>
 <p>接下来设置环境变量</p>
 <pre><code class="bash">export DOTNET_ROOT=/opt/dotnet
