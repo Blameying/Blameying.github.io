@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://note.xblame.top/"/>
-  <updated>2018-10-16T12:53:41.069Z</updated>
+  <updated>2018-10-16T13:15:43.359Z</updated>
   <id>http://note.xblame.top/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Archlinux 安装.net core</title>
+    <link href="http://note.xblame.top/2018/10/16/Archlinux-%E5%AE%89%E8%A3%85-net-core/"/>
+    <id>http://note.xblame.top/2018/10/16/Archlinux-安装-net-core/</id>
+    <published>2018-10-16T12:55:13.000Z</published>
+    <updated>2018-10-16T13:15:43.359Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;从Arch源安装:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;sudo pacman -S dotnet-sdk
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这个时候已经安装了.net core&lt;br&gt;找一个心仪的存放工程的目录&lt;/p&gt;
+&lt;pre&gt;&lt;code
+        
+      
+    
+    </summary>
+    
+      <category term="疑难杂症" scheme="http://note.xblame.top/categories/%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87/"/>
+    
+    
+      <category term="Archlinux,dotnet core" scheme="http://note.xblame.top/tags/Archlinux-dotnet-core/"/>
+    
+  </entry>
   
   <entry>
     <title>Archlinux安装Boost库</title>
