@@ -3,6 +3,29 @@
   
     
     <entry>
+      <title>Archlinux安装Boost库</title>
+      <link href="/2018/10/16/Archlinux%E5%AE%89%E8%A3%85Boost/"/>
+      <url>/2018/10/16/Archlinux%E5%AE%89%E8%A3%85Boost/</url>
+      
+        <content type="html"><![CDATA[<p>Archlinux 软件源中有boost 不需要自己编译安装。</p><pre><code class="bash">sudo pacman -S boost</code></pre><p>刷新一下当前环境</p><pre><code>ldconfig</code></pre><p>新建立一个代码文件，测试一下boost库是否安装成功了。</p><pre><code class="cpp">#include &lt;boost/timer.hpp&gt; //boost库统一用hpp#include &lt;iostream&gt;using namespace boost;using namespace std;int main(){    timer t;    cout &lt;&lt; &quot;max timespan:&quot; &lt;&lt; t.elapsed_max() / 3600 &lt;&lt; &quot;h&quot; &lt;&lt; endl;    cout &lt;&lt; &quot;min timespan:&quot; &lt;&lt; t.elapsed_min() &lt;&lt; &quot;s&quot; &lt;&lt; endl;    cout &lt;&lt; &quot;now time elapsed:&quot; &lt;&lt; t.elapsed() &lt;&lt; &quot;s&quot; &lt;&lt; endl;}</code></pre><p>编译的时候按照gnu的编译规矩要手动指定库文件</p><pre><code class="bash">g++ source_filename.cpp -lboost_timer -o execute_filename</code></pre><p>这里用-lboost_timer是因为我们用到了timer头文件。用其他库要改成-lboost_xxx</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Boost </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> boost,Archlinux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>初识 Vue.js 时的心理活动</title>
       <link href="/2018/10/03/%E5%88%9D%E8%AF%86-Vue-js-%E6%97%B6%E7%9A%84%E5%BF%83%E7%90%86%E6%B4%BB%E5%8A%A8/"/>
       <url>/2018/10/03/%E5%88%9D%E8%AF%86-Vue-js-%E6%97%B6%E7%9A%84%E5%BF%83%E7%90%86%E6%B4%BB%E5%8A%A8/</url>
