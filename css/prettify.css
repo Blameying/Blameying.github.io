@@ -8,7 +8,7 @@ pre{
     word-wrap: break-word;*/
     /*overflow-y: hidden!important;
     overflow-x: auto!important;*/
-    white-space: pre;
+    white-space: nowrap;
 }
 
 #post-content .prettyprint{
@@ -21,6 +21,7 @@ pre{
     font-size: 1rem;
     margin: 0;
     overflow: initial;
+		white-space: pre; 
 }
 
 #post-content pre code, #post-content pre tt {
