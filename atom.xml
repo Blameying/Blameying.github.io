@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://note.xblame.top/"/>
-  <updated>2018-10-18T09:07:29.440Z</updated>
+  <updated>2018-10-18T11:44:40.347Z</updated>
   <id>http://note.xblame.top/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>设计模式-适配器模式</title>
+    <link href="http://note.xblame.top/2018/10/18/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/"/>
+    <id>http://note.xblame.top/2018/10/18/设计模式-适配器模式/</id>
+    <published>2018-10-18T11:04:21.000Z</published>
+    <updated>2018-10-18T11:44:40.347Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;适配器并不是一个软件开发的专用术语，而是应用于生活的方方面面，一般用来提供不同接口之间的转接。例如下图：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://pbn2nc8d5.bkt.clouddn.com/Adaptor.jpg&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="设计模式" scheme="http://note.xblame.top/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+    
+      <category term="设计模式，适配器" scheme="http://note.xblame.top/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%EF%BC%8C%E9%80%82%E9%85%8D%E5%99%A8/"/>
+    
+  </entry>
   
   <entry>
     <title>设计模式-抽象工厂模式</title>

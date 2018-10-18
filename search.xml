@@ -3,6 +3,29 @@
   
     
     <entry>
+      <title>设计模式-适配器模式</title>
+      <link href="/2018/10/18/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/"/>
+      <url>/2018/10/18/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/</url>
+      
+        <content type="html"><![CDATA[<p>适配器并不是一个软件开发的专用术语，而是应用于生活的方方面面，一般用来提供不同接口之间的转接。例如下图：</p><p><img src="http://pbn2nc8d5.bkt.clouddn.com/Adaptor.jpg" alt="水管适配"><br>这个可以使得不同粗细的水管接在一起。</p><p>又比如我们用的网线有一种接口，那么光纤解码器也是一种适配器。不变的是其中流动的数据，就像上图中不变的是流动的水。</p><p>在代码中，有时需要使用一些外部的资源，或者对已有的资源定义一种新的接口都可以应用适配器模式。我们不妨先定义一种接口</p><pre><code class="java">public interface WeatherGet {        //通过城市名获得城市天气数据    public String getTheCityWeather(String city);}</code></pre><p>而原有的代码接口可能是这样的:</p><pre><code class="java">public class CityWeather {    public String getWeather(int id){        String weather = &quot;&quot;;        //假设1是北京的id        switch (id){            case 1:                weather = &quot;北京： 晴&quot;;                break;            default:                weather=&quot;&quot;;        }        return weather;    }}</code></pre><p>看到这里我们不能重写一个CityWeather,因为那样会耗时耗力，这里有现成的，实在不想写，并且获取天气的代码可能是私有的</p><p>要不把接口改了? 可是我们不止从一个天气发布源获取天气数据，改了接口，以前的其他代码就不能用了。</p><p>这就是适配器的应用场合了，</p><pre><code class="java">public class AdaptorForCityWeather extends CityWeather implements WeatherGet {    public String getTheCityWeather(String city) {        int weather_id = 0;        switch (city) {            case &quot;Beijing&quot;:                weather_id = 1;                break;            default:                    break;        }        if(weather_id!=0) {            return getWeather(weather_id);        }else {            return &quot;&quot;;        }    }}</code></pre><p>这样我们完全可以这么用了:</p><pre><code class="java">WeatherGet weatherGet = new AdaptorForCityWeather();System.out.println(weatherGet.getTheCityWeather(&quot;Beijing&quot;));</code></pre><p>方法调用起来和其他的没什么两样，完全可以放进列表中循环调用。只要实现我们用的接口，我们就不需要关注其他的差异。</p><p>如果我们比较贪心，想要一个接口实现多个接口不同的已有类的功能怎么办，可以看到我们上面用的是继承，很多语言是不支持多继承的，比如java</p><p>这样可以用关联的方式，通过生成旧类的变量来实现那么上面的接口类可以略作修改</p><pre><code class="java">public class AdaptorForCityWeather implements WeatherGet {    public String getTheCityWeather(String city) {                CityWeather cityWeather = new CityWeather();        int weather_id = 0;        switch (city) {            case &quot;Beijing&quot;:                weather_id = 1;                break;            default:                                                                          break;                                                        }        if(weather_id!=0) {                                                           return cityWeather.getWeather(weather_id);        }else {            return &quot;&quot;;                                                            }                                                                     }}</code></pre><p>用的例子是比较简单的适配器，我觉得以后遇到复杂的顺着这种思路应该能够理的清。</p><p>未完待续。。。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 设计模式 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 设计模式，适配器 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>设计模式-抽象工厂模式</title>
       <link href="/2018/10/18/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/"/>
       <url>/2018/10/18/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</url>
