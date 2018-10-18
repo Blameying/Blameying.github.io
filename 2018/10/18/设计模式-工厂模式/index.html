@@ -89,6 +89,11 @@
         <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?NKhlKQkXw/c66TR5p4wO+w==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
 
         
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/atelier-seaside-light.min.css?b71t6V/NeTk95fu056Paxw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
 
     
 
@@ -312,10 +317,10 @@
     
     
 
-    <!-- Custom Head -->
+    <!-- Custom Head --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
     
 
-<link rel="stylesheet" href="/css/prism-a11y-dark.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+</head>
 
 
     
@@ -500,75 +505,75 @@
         <p>上一篇遗漏了一些问题，工厂模式特别适合那种创建比较复杂的对象，这样将创建的任务交给其他部分，使得客户端代码更简介，调用更方便。后来者少写代码，减少代码的重复，提高复用性。<br>简单工厂模式比工厂模式简单，但工厂模式是简单工厂模式的进化么？我觉得不是，因为该少的东西一点都没少，那工厂模式多了什么？</p>
 <p>工厂模式的思路大概是这样的，还用上一篇游戏地图的例子，每一个地图所需要的参数和定制有可能是不一样的，要不要为每一个地图单独适配一个自己专门的工厂呢，我们把复杂的创建逻辑放在属于这个地图的工厂里，那这样，彼此的工厂不会混乱，地图本身的类也更符合一个模型的结构。这就是工厂模式，为每一个地图创建一个单独的工厂。</p>
 <p>那么依据面向接口编程的原则，给出地图的代码</p>
-<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//定义统一的调用接口</span>
-<span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">GameMap</span><span class="token punctuation">{</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">draw</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span class="token comment" spellcheck="true">//普通地图类 A 和 B</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MapA</span> <span class="token keyword">implements</span> <span class="token class-name">GameMap</span><span class="token punctuation">{</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">draw</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"This is MapA"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>        
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
+<pre><code class="java">//定义统一的调用接口
+public interface GameMap{
+    public void draw();
+}
+//普通地图类 A 和 B
+public class MapA implements GameMap{
+    public void draw(){
+        System.out.println(&quot;This is MapA&quot;);        
+    }
+}
 
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MapB</span> <span class="token keyword">implements</span> <span class="token class-name">GameMap</span><span class="token punctuation">{</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">draw</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"This is MapB"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
+public class MapB implements GameMap{
+    public void draw(){
+        System.out.println(&quot;This is MapB&quot;);
+    }
+}
 </code></pre>
 <p>接下来是工厂类的结构</p>
-<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//工厂的接口</span>
-<span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">MapFactorys</span> <span class="token punctuation">{</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> MapFactorys <span class="token function">createFactory</span><span class="token punctuation">(</span>String selected<span class="token punctuation">)</span><span class="token punctuation">{</span>
-        MapFactorys mapFactorys <span class="token operator">=</span> null<span class="token punctuation">;</span>
-        <span class="token keyword">switch</span> <span class="token punctuation">(</span>selected<span class="token punctuation">)</span><span class="token punctuation">{</span>
-            <span class="token keyword">case</span> <span class="token string">"MapAFactory"</span><span class="token operator">:</span>
-                mapFactorys <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MapAFactory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                <span class="token keyword">break</span><span class="token punctuation">;</span>
-            <span class="token keyword">case</span> <span class="token string">"MapBFactory"</span><span class="token operator">:</span>
-                mapFactorys <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MapBFactory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                <span class="token keyword">break</span><span class="token punctuation">;</span>
-                <span class="token keyword">default</span><span class="token operator">:</span>
-                    mapFactorys <span class="token operator">=</span> null<span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">return</span> mapFactorys<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+<pre><code class="java">//工厂的接口
+public interface MapFactorys {
+    public static MapFactorys createFactory(String selected){
+        MapFactorys mapFactorys = null;
+        switch (selected){
+            case &quot;MapAFactory&quot;:
+                mapFactorys = new MapAFactory();
+                break;
+            case &quot;MapBFactory&quot;:
+                mapFactorys = new MapBFactory();
+                break;
+                default:
+                    mapFactorys = null;
+        }
+        return mapFactorys;
+    }
 
-    <span class="token keyword">public</span> GameMap <span class="token function">createMap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+    public GameMap createMap();
+}
 
-<span class="token comment" spellcheck="true">//具体的工厂</span>
+//具体的工厂
 
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MapAFactory</span> <span class="token keyword">implements</span> <span class="token class-name">MapFactorys</span><span class="token punctuation">{</span>
-    <span class="token keyword">public</span> GameMap <span class="token function">createMap</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">MapA</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
+public class MapAFactory implements MapFactorys{
+    public GameMap createMap() {
+        return new MapA();
+    }
+}
 
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MapBFactory</span> <span class="token keyword">implements</span> <span class="token class-name">MapFactorys</span><span class="token punctuation">{</span>
-    <span class="token keyword">public</span> GameMap <span class="token function">createMap</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">MapB</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
+public class MapBFactory implements MapFactorys{
+    public GameMap createMap() {
+        return new MapB();
+    }
+}
 </code></pre>
 <p>确实，单一工厂只生产单一产品，在这里就是只生产单一的地图。<br>客户端的逻辑基本不需要变。</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>Scanner<span class="token punctuation">;</span>
+<pre><code class="java">import java.util.Scanner;
 
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Client</span> <span class="token punctuation">{</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">{</span>
-        Scanner scan <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Scanner</span><span class="token punctuation">(</span>System<span class="token punctuation">.</span>in<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        String selected <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span>
-        GameMap map <span class="token operator">=</span> null<span class="token punctuation">;</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>scan<span class="token punctuation">.</span><span class="token function">hasNext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-            selected <span class="token operator">=</span> scan<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>selected<span class="token punctuation">.</span><span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            map <span class="token operator">=</span> MapFactorys<span class="token punctuation">.</span><span class="token function">createFactory</span><span class="token punctuation">(</span>selected<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">createMap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>map<span class="token operator">!=</span>null<span class="token punctuation">)</span> map<span class="token punctuation">.</span><span class="token function">draw</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
+public class Client {
+    public static void main(String[] args){
+        Scanner scan = new Scanner(System.in);
+        String selected = &quot;&quot;;
+        GameMap map = null;
+        if(scan.hasNext()){
+            selected = scan.next();
+        }
+        if(!selected.isEmpty()) {
+            map = MapFactorys.createFactory(selected).createMap();
+        }
+        if(map!=null) map.draw();
+    }
+}
 </code></pre>
 <p>这样改的好处目前是看不来的，这是因为没看到我们用工厂生产一个东西有多么复杂，试想如果构建一个东西需要很多先决条件呢，也就是必须分为几步的话，不同的地图，这几步还不一样的话，工厂模式的好处就会体现出来，成功的分离了产品和产品之间的变化点。</p>
 <p>但是工厂模式仍然有比较大的麻烦，相信大家也发现了，在工厂接口中的静态方法，免不了还是一堆的条件判断。</p>
@@ -958,6 +963,12 @@ It will not impact the appearance and can give developers a lot of support :)
 
 <!-- Import prettify js  -->
 
+    
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
+
 
 
 <!-- Window Load -->
@@ -968,6 +979,13 @@ It will not impact the appearance and can give developers a lot of support :)
         $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
     });
 
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
     
     
 </script>

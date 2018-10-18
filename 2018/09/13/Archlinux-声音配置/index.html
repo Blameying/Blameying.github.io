@@ -89,6 +89,11 @@
         <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?NKhlKQkXw/c66TR5p4wO+w==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
 
         
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/atelier-seaside-light.min.css?b71t6V/NeTk95fu056Paxw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
 
     
 
@@ -312,10 +317,10 @@
     
     
 
-    <!-- Custom Head -->
+    <!-- Custom Head --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
     
 
-<link rel="stylesheet" href="/css/prism-a11y-dark.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+</head>
 
 
     
@@ -507,15 +512,15 @@
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <p>Archlinux 通常使用alsa管理声音，需要安装alsa-utils包<br>安装完是默认静音的。需要执行</p>
-<pre class=" language-language-shell line-numbers"><code class="language-language-shell line-numbers">amixer sset Master unmute
+<pre><code class="language-shell line-numbers">amixer sset Master unmute
 </code></pre>
 
 <p>如果提示：amixer: Unable to find simple control ‘Master’,0<br>则表示不能找到声卡设备需要继续配置<br>执行命令获取声卡的声卡ID和设备ID</p>
-<pre class=" language-language-shell line-numbers"><code class="language-language-shell line-numbers">aplay -l
+<pre><code class="language-shell line-numbers">aplay -l
 </code></pre>
 
 <p>结果如下</p>
-<pre class=" language-language-shell line-numbers"><code class="language-language-shell line-numbers">
+<pre><code class="language-shell line-numbers">
 **** List of PLAYBACK Hardware Devices ****
 card 0: HDMI [HDA Intel HDMI], device 3: HDMI 0 [HDMI 0]
   Subdevices: 1/1
@@ -539,13 +544,13 @@ card 1: PCH [HDA Intel PCH], device 0: ALC282 Analog [ALC282 Analog]
 </code></pre>
 
 <p>把下列配置添加到系统级别的 /etc/asound.conf 或用户级别的 ~/.asoundrc 文件。如果文件不存在，可以手动创建。其中的各个ID，根据实际情况调整：</p>
-<pre class=" language-language-shell line-numbers"><code class="language-language-shell line-numbers">defaults.pcm.card 1   #根据上面输出的信息，ALC282是我的设备，选择card=1
+<pre><code class="language-shell line-numbers">defaults.pcm.card 1   #根据上面输出的信息，ALC282是我的设备，选择card=1
 defaults.pcm.device 0 #device 为0
 defaults.ctl.card 1  #决定哪个声卡能由alsamixer控制
 </code></pre>
 
 <p>同时，对于i3wm,fluxbox之类的wm（窗口管理器），而不是DE(Desktop environment),往往需要自己设置音量快捷键<br>这里给出i3的例子（编辑~/.config/i3/config）文件</p>
-<pre class=" language-language-shell line-numbers"><code class="language-language-shell line-numbers">#设置静音
+<pre><code class="language-shell line-numbers">#设置静音
 bindsym XF86AudioMute exec "amixer -q sset Master,0 toggle"
 #设置音量调节
 bindsym XF86AudioRaiseVolume exec --no-startup-id  amixer -c 0 set Master 3%+
@@ -937,6 +942,12 @@ It will not impact the appearance and can give developers a lot of support :)
 
 <!-- Import prettify js  -->
 
+    
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
+
 
 
 <!-- Window Load -->
@@ -947,6 +958,13 @@ It will not impact the appearance and can give developers a lot of support :)
         $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
     });
 
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
     
     
 </script>

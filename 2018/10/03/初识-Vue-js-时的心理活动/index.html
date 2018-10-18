@@ -89,6 +89,11 @@
         <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?NKhlKQkXw/c66TR5p4wO+w==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
 
         
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/atelier-seaside-light.min.css?b71t6V/NeTk95fu056Paxw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
 
     
 
@@ -312,10 +317,10 @@
     
     
 
-    <!-- Custom Head -->
+    <!-- Custom Head --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
     
 
-<link rel="stylesheet" href="/css/prism-a11y-dark.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+</head>
 
 
     
@@ -358,15 +363,6 @@
 
     <!-- Left aligned menu below button -->
     
-    
-    <button id="post-toc-trigger-btn"
-        class="mdl-button mdl-js-button mdl-button--icon">
-        <i class="material-icons">format_list_numbered</i>
-    </button>
-
-    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#undefined"><span class="post-toc-number">1.</span> <span class="post-toc-text">{{user.username}}</span></a></li></ol>
-    </ul>
     
 
 
@@ -512,18 +508,18 @@
 <p>那么说一下当下的理解。</p>
 <p>关于v-if v-for之类的在理解上没有什么问题。关键是模板模块和路由。vue为了提高代码的重复利用，允许用户把代码分成一个个模块，那么在构建一个新的网页的时候如果有需要的组件可以直接拿过来用。一个网站的不同网页为了保持样式的统一肯定有很多部分需要在不同的网页中重复利用，这样可以直接在父元素中包含这个组件。组件之间允许嵌套。组件之间可以通过props传递变量。每一个组件就是一个小的页面，在这个组件的vue文件中可以直接定义自己js和css。使得整个工程的结构清晰。一张网页就可以看成一张画纸，组件就是拼图，就看怎么摆放了。<br><br><br><img src="http://pbn2nc8d5.bkt.clouddn.com/github/blog/10-03-1.jpgtimg%20%281%29.jpeg" alt=""><br><br><br>做的一个样例，列表内容临时去<a href="https://www.jianshu.com/" target="_blank" rel="noopener">简书</a>摘的，应该看不清吧。</p>
 <p><img src="http://pbn2nc8d5.bkt.clouddn.com/vu1.png" alt=""></p>
-<pre class=" language-language-javascript line-numbers"><code class="language-language-javascript line-numbers"><template>
-    <div class="HomePage">
-        <div class="person">
-            <img class="headico" v-bind:src="user.headico">
-            <h3 class="username">{{user.username}}</h3>
-            <p>{{user.info}}</p>
-        </div>
-        <articlelistitem></articlelistitem>
-    </div>
-</template>
+<pre><code class="language-javascript line-numbers">&lt;template&gt;
+    &lt;div class="HomePage"&gt;
+        &lt;div class="person"&gt;
+            &lt;img class="headico" v-bind:src="user.headico"&gt;
+            &lt;h3 class="username"&gt;{{user.username}}&lt;/h3&gt;
+            &lt;p&gt;{{user.info}}&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;articlelistitem&gt;&lt;/articlelistitem&gt;
+    &lt;/div&gt;
+&lt;/template&gt;
 
-<script>
+&lt;script&gt;
 import ArticleListItem from './ArticleListItem.vue'
 export default {
   name: 'HomePage',
@@ -540,15 +536,15 @@ export default {
     'articlelistitem': ArticleListItem
   }
 }
-</script>
+&lt;/script&gt;
 
-<style scoped>
+&lt;style scoped&gt;
 .headico {
     width: 100px;
     height: 100px;
     border-radius: 50px;
 }
-</style>
+&lt;/style&gt;
 
 </code></pre>
 
@@ -941,6 +937,12 @@ It will not impact the appearance and can give developers a lot of support :)
 
 <!-- Import prettify js  -->
 
+    
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
+
 
 
 <!-- Window Load -->
@@ -951,6 +953,13 @@ It will not impact the appearance and can give developers a lot of support :)
         $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
     });
 
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
     
     
 </script>

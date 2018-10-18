@@ -109,7 +109,10 @@
         
         
           &lt;p&gt;从Arch源安装:&lt;/p&gt;
-&lt;pre class=&quot; language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; pacman -S
+&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;sudo pacman -S dotnet-sdk
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这个时候已经安装了.net core&lt;br&gt;找一个心仪的存放工程的目录&lt;/p&gt;
+&lt;pre&gt;&lt;code
         
       
     
@@ -136,7 +139,7 @@
         
         
           &lt;p&gt;Archlinux 软件源中有boost 不需要自己编译安装。&lt;/p&gt;
-&lt;pre class=&quot; language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt;
+&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;sudo pacman -S
         
       
     
@@ -213,7 +216,7 @@
         
         
           &lt;p&gt;Archlinux 通常使用alsa管理声音，需要安装alsa-utils包&lt;br&gt;安装完是默认静音的。需要执行&lt;/p&gt;
-&lt;pre class=&quot; language-language-shell line-numbers&quot;&gt;&lt;code
+&lt;pre&gt;&lt;code class=&quot;language-shell line-numbers&quot;&gt;amixer sset Master
         
       
     
@@ -240,7 +243,7 @@
         
         
           &lt;p&gt;编辑 /etc/lvm/lvm.conf&lt;br&gt;找到 use_lvmetad = 1&lt;br&gt;将其修改为&lt;/p&gt;
-&lt;pre class=&quot; language-language-bash line-numbers&quot;&gt;&lt;code
+&lt;pre&gt;&lt;code class=&quot;language-bash line-numbers&quot;&gt;use_lvmetad =
         
       
     
@@ -322,8 +325,8 @@
         
           &lt;h3&gt;Model&lt;/h3&gt;
 
-&lt;pre class=&quot; language-language-Ruby &quot;&gt;&lt;code class=&quot;language-language-Ruby &quot;&gt;class User &lt; ApplicationRecord
-has_many
+&lt;pre&gt;&lt;code class=&quot;language-Ruby &quot;&gt;class User &amp;lt; ApplicationRecord
+has_many :a_friends, class_name:
         
       
     
