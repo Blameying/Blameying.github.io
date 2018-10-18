@@ -3,6 +3,29 @@
   
     
     <entry>
+      <title>设计模式-桥接模式</title>
+      <link href="/2018/10/18/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/"/>
+      <url>/2018/10/18/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/</url>
+      
+        <content type="html"><![CDATA[<p>桥接模式是虚拟了一座“桥”，只不过这座”桥”的两端是抽象和实体。在维基百科用的是抽象的图形和画图的关系，我尝试找一中新的例子来两相比较促进理解。</p><p>鸟是会飞的，不同的鸟有不同的飞行姿态，当然有的不是鸟的也可以飞。所以建立一个飞行的接口</p><pre><code class="java">public interface Flyable {    public void fly();}</code></pre><p>实现两种具体的动作</p><pre><code class="java">public class FastFly implements Flyable{    public void fly() {        System.out.println(&quot;Fastly Fly&quot;);    }}public class SlowFly implements Flyable{    public void fly() {        System.out.println(&quot;Slowly Fly&quot;);    }}</code></pre><p>这是具体的那一部分，实现了具体的行为。</p><p>那在这个故事里谁是抽象的那一部分，可以是鸟，也可以是“能力”<br>这里我选择鸟。</p><pre><code class="java">public interface Bird{    public void fly();}</code></pre><p>鸟拥有这样一种能力，而这种能力的具体实现我们已经分离出去了，接下来搭一个桥梁将其连接起来。</p><p>创建麻雀种</p><pre><code class="java">public class Sparrow implements Bird{    private Flyable flyable = new FastFly();    public void fly() {        flyable.fly();    }}</code></pre><p>现在来看一下这个模式有啥用，桥接模式最大(个人理解)的好处是使得桥的两端可以单独变化而互不影响，不管比如具体端，飞行的具体方式不管如何实现，鸟只要调用fly就行了，这个是永远不变的，而鸟类的变化对飞行的具体方式也没影响，都是鸟类调用飞行。</p><p>感觉桥接模式无处不在。</p><p>一个简单的例子，以后有新的感受再来填坑。</p><p>未完待续。。。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 设计模式 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 设计模式,桥接模式 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>设计模式-适配器模式</title>
       <link href="/2018/10/18/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/"/>
       <url>/2018/10/18/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/</url>

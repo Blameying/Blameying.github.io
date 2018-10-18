@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://note.xblame.top/"/>
-  <updated>2018-10-18T11:57:07.200Z</updated>
+  <updated>2018-10-18T13:18:06.923Z</updated>
   <id>http://note.xblame.top/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>设计模式-桥接模式</title>
+    <link href="http://note.xblame.top/2018/10/18/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/"/>
+    <id>http://note.xblame.top/2018/10/18/设计模式-桥接模式/</id>
+    <published>2018-10-18T12:43:03.000Z</published>
+    <updated>2018-10-18T13:18:06.923Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;桥接模式是虚拟了一座“桥”，只不过这座”桥”的两端是抽象和实体。在维基百科用的是抽象的图形和画图的关系，我尝试找一中新的例子来两相比较促进理解。&lt;/p&gt;
+&lt;p&gt;鸟是会飞的，不同的鸟有不同的飞行姿态，当然有的不是鸟的也可以飞。所以建立一个飞行的接口&lt;/p&gt;
+&lt;pre&gt;&lt;cod
+        
+      
+    
+    </summary>
+    
+      <category term="设计模式" scheme="http://note.xblame.top/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+    
+      <category term="设计模式,桥接模式" scheme="http://note.xblame.top/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>设计模式-适配器模式</title>
