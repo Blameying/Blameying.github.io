@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://note.xblame.top/"/>
-  <updated>2018-10-18T07:57:39.560Z</updated>
+  <updated>2018-10-18T09:07:29.440Z</updated>
   <id>http://note.xblame.top/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>设计模式-抽象工厂模式</title>
+    <link href="http://note.xblame.top/2018/10/18/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/"/>
+    <id>http://note.xblame.top/2018/10/18/设计模式-抽象工厂模式/</id>
+    <published>2018-10-18T08:00:18.000Z</published>
+    <updated>2018-10-18T09:07:29.440Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;走过了简单工厂模式和工厂模式，我来了解一下抽象工厂模式，现在已经知道“工厂”二字的含义了，就是帮别人建造对象，想想JDBC(数据库连接库)中用到的getConnection之类的方法，这就是工厂模式的应用啊。但是简单工厂模式和工厂模式都存在那个添加和修改必须更改以前代码的问
+        
+      
+    
+    </summary>
+    
+      <category term="设计模式" scheme="http://note.xblame.top/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+    
+      <category term="设计模式,工厂模式" scheme="http://note.xblame.top/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>设计模式-工厂模式</title>

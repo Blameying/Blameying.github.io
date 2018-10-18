@@ -51,7 +51,7 @@
     
     <title>
         
-            标签: rails,多对多,自联结,好友关系 | 
+            设计模式-抽象工厂模式 | 
         
         XBlame
     </title>
@@ -62,7 +62,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="事本荒唐，吾持即为正">
-    <meta name="keywords" content="软件,计算机">
+    <meta name="keywords" content="软件,计算机,设计模式,工厂模式">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -230,7 +230,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="XBlame">
-    <meta name="msapplication-starturl" content="http://note.xblame.top/tags/rails-多对多-自联结-好友关系/">
+    <meta name="msapplication-starturl" content="http://note.xblame.top/2018/10/18/设计模式-抽象工厂模式/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="XBlame">
@@ -249,13 +249,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://note.xblame.top/tags/rails-多对多-自联结-好友关系/">
+    <meta property="og:url" content="http://note.xblame.top/2018/10/18/设计模式-抽象工厂模式/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="标签: rails,多对多,自联结,好友关系 | XBlame">
+    <meta property="og:title" content="设计模式-抽象工厂模式 | XBlame">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="事本荒唐，吾持即为正">
-    
+    <meta property="og:article:tag" content="设计模式,工厂模式"> 
 
+    
+        <meta property="article:published_time" content="Thu Oct 18 2018 16:00:18 GMT+0800">
+        <meta property="article:modified_time" content="Thu Oct 18 2018 17:07:29 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -263,13 +266,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://note.xblame.top/tags/rails-多对多-自联结-好友关系/index.html" />
+        <link rel="canonical" href="http://note.xblame.top/2018/10/18/设计模式-抽象工厂模式/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://note.xblame.top/2018/10/18/设计模式-抽象工厂模式/index.html",
+    "headline": "设计模式-抽象工厂模式",
+    "datePublished": "Thu Oct 18 2018 16:00:18 GMT+0800",
+    "dateModified": "Thu Oct 18 2018 17:07:29 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "XBlame",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "开心于与你的相遇,Nice to meet YOU"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "XBlame",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": ",设计模式,工厂模式软件,计算机",
+    "description": "事本荒唐，吾持即为正",
+}
+</script>
 
 
     
@@ -303,100 +336,339 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
+                    <!-- Post TOC -->
+
     
-    <div class="locate-thumbnail-symbol"></div>
-
-    <!-- Pin on top -->
-    
-
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/09/03/Rails-多对多-自联结-建立好友关系表-md/">Rails 多对多 自联结 建立好友关系表</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            Model
-
-class User &lt; Application...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/09/03/Rails-多对多-自联结-建立好友关系表-md/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="XBlame's avatar">
-            </div>
-            <div>
-                <strong>XBlame</strong>
-                <span>9月 03, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/代码/">代码</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
             </span>
-        </div>
+        </a>
     </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        <!-- Custom Thumbnail -->
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(http://pbn2nc8d5.bkt.clouddn.com/2_first.jpg)">
+    
+            <p class="article-headline-p">
+                设计模式-抽象工厂模式
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>XBlame</strong>
+        <span>10月 18, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC5klEQVR42u3aQW7jMBAEQP//07vXBbxRuodyYpPFk2ErEUsG0pkZPv4cuR7Y2NjY2NjY2NjYb8l+xOur6/99//n19V2er3m+/j+Acs/Y2NjYJ7C/+dN/ucWvNpo8uOs7Jg+o2DM2Njb2AewknPKAuX6/jbQb9oyNjY2NfRlUSZC0RUhS6mBjY2Njv65h1Dan2p/FxsbGxp41aNq20ezTvBT5oV4aNjY29tuzV8Ljt17/wnwbGxsb+y3Z9RHGsjDIB7pJZN52+BIbGxt7I/bKUHa9nMiHyslObqjAsLGxsT+WnY9jW15yxCcBz9pb2NjY2Cew8/Fte2RnZTzcjgeix4qNjY29Nfs6ElZGrUkp0u5h+DVgY2Njb8puC4DZSOCuMUBUcuTzbWxsbOwt2Cu3X2/0t+OHttWFjY2NfQL7um2UFyQJaXbfnD08c4qNjY394ex83JvfuG0htY2kNrqwsbGx92bP/tFfCbzZIc62HCpyGxsbG3sL9qzASIKkLWby0qIOUWxsbOyt2UkstUVFMni4K8CShY2NjX0mO2/i3HX4ZhaNNwcYNjY29geyZwd0WswKMm+BFQGGjY2NvR27Ha+2h2lmg9u8LVWXItjY2NhbsNvWfNs2yoNwPRS/2Sc2Njb21uw8MFpGHmztqLgeBmNjY2NvzW4b8SvD3dl985Ab5jY2Njb2x7JnmDzY2oM+7SgiuRIbGxt7b/Z6mL3uwc3KIWxsbOyT2bOtzwa0sxDKwxIbGxv7HHZ7+KaNjfZh5aOLPDixsbGx92a3a9b0yUua9dbSsALDxsbG/lj2I17t1vNNJ6VLOwwuBr3Y2NjYW7DbQqItKtoiZ3ZYp67AsLGxsbdjr4dWjn9dU6koRbCxsbGPZOdx0o5vV9pM0UAaGxsbG7sc3LZNpTYC64IKGxsb+wB221SabWJ24Kb9PdjY2NinsWeD3lkrKgnCHFl8GdjY2Nibss9Z2NjY2NjY2NjY2G+z/gKCO5rdOxkENQAAAABJRU5ErkJggg==">
+    
+</ul>
+
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/设计模式-工厂模式/">设计模式,工厂模式</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=设计模式-抽象工厂模式&url=http://note.xblame.top/2018/10/18/设计模式-抽象工厂模式/index.html&pic=http://note.xblame.top/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://note.xblame.top/2018/10/18/设计模式-抽象工厂模式/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=XBlame&title=设计模式-抽象工厂模式&summary=事本荒唐，吾持即为正&pics=http://note.xblame.top/img/favicon.png&url=http://note.xblame.top/2018/10/18/设计模式-抽象工厂模式/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+    
 </div>
 
-            
-            
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>走过了简单工厂模式和工厂模式，我来了解一下抽象工厂模式，现在已经知道“工厂”二字的含义了，就是帮别人建造对象，想想JDBC(数据库连接库)中用到的getConnection之类的方法，这就是工厂模式的应用啊。但是简单工厂模式和工厂模式都存在那个添加和修改必须更改以前代码的问题，这是不符合开闭原则的，也不是我们非要鸡蛋里挑骨头，而是在大体量的项目中，能不重新编译就不重新编译，能不引入更多变数就不引入更多变数，更希望的是像vscode编辑器的插件一样，这样的扩展性让人很舒服，开发者不需要修改官方的源码，每个人都可以互相不影响的开发插件。</p>
+<p>那么如何令工厂模式符合开闭原则呢，能不能我从配置文件中动态获取类的名称然后自动的选择调用哪个工厂呢，当然可以。</p>
+<pre><code class="java">MapFactorys myMap = Class.forName(&quot;MapAFactory&quot;).newInstance();
+</code></pre>
+<p>当提供的参数变成字符串的话，我们的可操作性就变大了。其实用Ruby这样的元编程语言能把工厂模式做的更好。</p>
+<p>接下来看一下抽象工厂模式<br>工厂模式和抽象工厂模式最大的区别就是</p>
+<ul>
+<li>工程模式面向单个层面的产品</li>
+<li>抽象工厂模式面向多个层面的产品</li>
+</ul>
+<p>一个游戏肯定不止有地图，这个地图上得有对应的野怪，得有对应的据点吧，得有杂七杂八的其他东西，我们前面已经这么较真设计了，肯定忍受不了这么多东西都把责任扔在地图身上。<br>一个工厂可不可以在建立地图的时候，把这张图对应的各个品种的野怪和各个类型的据点(建筑物)给搞定呢。</p>
+<p>在原来的代码的基础上添加Monster相关</p>
+<pre><code class="java">//Monster 接口
+public interface Monster {
+    public void say();
+}
+
+public class MonsterA implements Monster{
+    public void say() {
+        System.out.println(&quot;I am Monster A&quot;);
+    }
+}
+
+public class MonsterB implements Monster {
+    public void say() {
+        System.out.println(&quot;I am Monster B&quot;);
+    }
+}
+</code></pre>
+<p>修改一下工厂相关</p>
+<pre><code class="java">
+public interface Factorys {
+    public static Factorys getFactory(String select){
+        Factorys factorys = null;
+        switch (select){
+            case &quot;FactoryA&quot;:
+                factorys = new FactoryA();
+                break;
+            case &quot;FactoryB&quot;:
+                factorys = new FactoryB();
+                break;
+            default:
+                factorys =null;
+        }
+        return factorys;
+    }
+    public Monster getMonster();
+    public GameMap getGameMap();
+}
+
+public class FactoryA implements Factorys {
+
+    public Monster getMonster() {
+        return new MonsterA();
+    }
+
+    public GameMap getGameMap() {
+        return new MapA();
+    }
+}
+
+public class FactoryB implements Factorys{
+
+    public Monster getMonster() {
+        return new MonsterB();
+    }
+
+    public GameMap getGameMap() {
+        return new MapB();
+    }
+}
+</code></pre>
+<p>其实从这里就可以看出，抽象工厂模式并没有更优秀，只是和工厂模式适合的场合不一样，这里的FactoryA 和 FactoryB 其实是不同的生产组合。</p>
+<p>客户端代码</p>
+<pre><code>import java.util.Scanner;
+
+public class Client {
+    public static void main(String[] args){
+        Scanner scan = new Scanner(System.in);
+        String selected = &quot;&quot;;
+        GameMap map = null;
+        Monster monster = null;
+        if(scan.hasNext()){
+            selected = scan.next();
+        }
+        if(!selected.isEmpty()) {
+            Factorys f = Factorys.getFactory(selected);
+            monster = f.getMonster();
+            map = f.getGameMap();
+        }
+        if(map!=null &amp;&amp; monster!=null) {
+            map.draw();
+            monster.say();
+        }
+    }
+}
+</code></pre><p>如果我们添加一个新品种的怪物或者新的地图又或者新的一种组合，都可以通过添加该产品接口下的类和新的工厂类，如果配合一开始所说的Class.forname方法，可以满足开闭原则，但要是我要加入据点这一新的种类呢，亦或者说这一新的层次呢，那我所有的已有的工厂都需要新加一个方法，getXXXX，所以是不满足开闭原则的。真正体会到了设计模式只是提供一种解决问题的思路，没有什么所谓的标准定式，需要根据实际的情况选择和改变。所以真正有意义的是前人这种思考的方式。<br>看后面能不能用ruby实现一个更优美的工厂方法吧。</p>
+<p>未完待续。。。</p>
+
+        
+                <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;">
+                    <p><strong>
+                         
+                            个人原创内容，未经许可禁止转载
+                        </strong>
+                        <br>
+                        <strong>本文链接：</strong><a href="http://note.xblame.top/2018/10/18/设计模式-抽象工厂模式/">http://note.xblame.top/2018/10/18/设计模式-抽象工厂模式/</a>
+                    </p>
+                </blockquote>
         
     
 
     
+</div>
 
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
 
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
+                
 
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
-    $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
+                <!-- Post Comments -->
+                
+                    
+    <div id="comment" style='padding:10px;' class="vcomment"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+    var GUEST_INFO = ['nick','mail','link'];
+    var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+        return GUEST_INFO.indexOf(item) > -1
+    });
+    var notify = 'false' === 'true';
+    var verify = 'false' === 'true';
+    new Valine({
+        el: '.vcomment',
+        notify: notify,
+        verify: verify,
+        appId: "amc0aBm93HuG7hcWTiNAOdW5-gzGzoHsz",
+        appKey: "DmgSkD2UvcamdfYSISbBEUSa",
+        placeholder: "Just go go",
+        pageSize:'10',
+        avatar:'identicon',
+        lang:'zh-cn',
+        guest_info: guest_info
+    });
 </script>
 
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
     
-</div>
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/10/18/设计模式-工厂模式/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
@@ -548,6 +820,14 @@ It will not impact the appearance and can give developers a lot of support :)
 </aside>
 
                     
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
 
                     
 

@@ -3,6 +3,29 @@
   
     
     <entry>
+      <title>设计模式-抽象工厂模式</title>
+      <link href="/2018/10/18/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/"/>
+      <url>/2018/10/18/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</url>
+      
+        <content type="html"><![CDATA[<p>走过了简单工厂模式和工厂模式，我来了解一下抽象工厂模式，现在已经知道“工厂”二字的含义了，就是帮别人建造对象，想想JDBC(数据库连接库)中用到的getConnection之类的方法，这就是工厂模式的应用啊。但是简单工厂模式和工厂模式都存在那个添加和修改必须更改以前代码的问题，这是不符合开闭原则的，也不是我们非要鸡蛋里挑骨头，而是在大体量的项目中，能不重新编译就不重新编译，能不引入更多变数就不引入更多变数，更希望的是像vscode编辑器的插件一样，这样的扩展性让人很舒服，开发者不需要修改官方的源码，每个人都可以互相不影响的开发插件。</p><p>那么如何令工厂模式符合开闭原则呢，能不能我从配置文件中动态获取类的名称然后自动的选择调用哪个工厂呢，当然可以。</p><pre><code class="java">MapFactorys myMap = Class.forName(&quot;MapAFactory&quot;).newInstance();</code></pre><p>当提供的参数变成字符串的话，我们的可操作性就变大了。其实用Ruby这样的元编程语言能把工厂模式做的更好。</p><p>接下来看一下抽象工厂模式<br>工厂模式和抽象工厂模式最大的区别就是</p><ul><li>工程模式面向单个层面的产品</li><li>抽象工厂模式面向多个层面的产品</li></ul><p>一个游戏肯定不止有地图，这个地图上得有对应的野怪，得有对应的据点吧，得有杂七杂八的其他东西，我们前面已经这么较真设计了，肯定忍受不了这么多东西都把责任扔在地图身上。<br>一个工厂可不可以在建立地图的时候，把这张图对应的各个品种的野怪和各个类型的据点(建筑物)给搞定呢。</p><p>在原来的代码的基础上添加Monster相关</p><pre><code class="java">//Monster 接口public interface Monster {    public void say();}public class MonsterA implements Monster{    public void say() {        System.out.println(&quot;I am Monster A&quot;);    }}public class MonsterB implements Monster {    public void say() {        System.out.println(&quot;I am Monster B&quot;);    }}</code></pre><p>修改一下工厂相关</p><pre><code class="java">public interface Factorys {    public static Factorys getFactory(String select){        Factorys factorys = null;        switch (select){            case &quot;FactoryA&quot;:                factorys = new FactoryA();                break;            case &quot;FactoryB&quot;:                factorys = new FactoryB();                break;            default:                factorys =null;        }        return factorys;    }    public Monster getMonster();    public GameMap getGameMap();}public class FactoryA implements Factorys {    public Monster getMonster() {        return new MonsterA();    }    public GameMap getGameMap() {        return new MapA();    }}public class FactoryB implements Factorys{    public Monster getMonster() {        return new MonsterB();    }    public GameMap getGameMap() {        return new MapB();    }}</code></pre><p>其实从这里就可以看出，抽象工厂模式并没有更优秀，只是和工厂模式适合的场合不一样，这里的FactoryA 和 FactoryB 其实是不同的生产组合。</p><p>客户端代码</p><pre><code>import java.util.Scanner;public class Client {    public static void main(String[] args){        Scanner scan = new Scanner(System.in);        String selected = &quot;&quot;;        GameMap map = null;        Monster monster = null;        if(scan.hasNext()){            selected = scan.next();        }        if(!selected.isEmpty()) {            Factorys f = Factorys.getFactory(selected);            monster = f.getMonster();            map = f.getGameMap();        }        if(map!=null &amp;&amp; monster!=null) {            map.draw();            monster.say();        }    }}</code></pre><p>如果我们添加一个新品种的怪物或者新的地图又或者新的一种组合，都可以通过添加该产品接口下的类和新的工厂类，如果配合一开始所说的Class.forname方法，可以满足开闭原则，但要是我要加入据点这一新的种类呢，亦或者说这一新的层次呢，那我所有的已有的工厂都需要新加一个方法，getXXXX，所以是不满足开闭原则的。真正体会到了设计模式只是提供一种解决问题的思路，没有什么所谓的标准定式，需要根据实际的情况选择和改变。所以真正有意义的是前人这种思考的方式。<br>看后面能不能用ruby实现一个更优美的工厂方法吧。</p><p>未完待续。。。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 设计模式 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 设计模式,工厂模式 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>设计模式-工厂模式</title>
       <link href="/2018/10/18/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/"/>
       <url>/2018/10/18/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</url>
