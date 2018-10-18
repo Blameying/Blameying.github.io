@@ -8,7 +8,7 @@ pre{
     word-wrap: break-word;*/
     /*overflow-y: hidden!important;
     overflow-x: auto!important;*/
-    white-space: nowrap;
+    white-space: pre;
 }
 
 #post-content .prettyprint{
