@@ -3,6 +3,29 @@
   
     
     <entry>
+      <title>设计模式-工厂模式</title>
+      <link href="/2018/10/18/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/"/>
+      <url>/2018/10/18/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</url>
+      
+        <content type="html"><![CDATA[<p>上一篇遗漏了一些问题，工厂模式特别适合那种创建比较复杂的对象，这样将创建的任务交给其他部分，使得客户端代码更简介，调用更方便。后来者少写代码，减少代码的重复，提高复用性。<br>简单工厂模式比工厂模式简单，但工厂模式是简单工厂模式的进化么？我觉得不是，因为该少的东西一点都没少，那工厂模式多了什么？</p><p>工厂模式的思路大概是这样的，还用上一篇游戏地图的例子，每一个地图所需要的参数和定制有可能是不一样的，要不要为每一个地图单独适配一个自己专门的工厂呢，我们把复杂的创建逻辑放在属于这个地图的工厂里，那这样，彼此的工厂不会混乱，地图本身的类也更符合一个模型的结构。这就是工厂模式，为每一个地图创建一个单独的工厂。</p><p>那么依据面向接口编程的原则，给出地图的代码</p><pre><code class="java">//定义统一的调用接口public interface GameMap{    public void draw();}//普通地图类 A 和 Bpublic class MapA implements GameMap{    public void draw(){        System.out.println(&quot;This is MapA&quot;);            }}public class MapB implements GameMap{    public void draw(){        System.out.println(&quot;This is MapB&quot;);    }}</code></pre><p>接下来是工厂类的结构</p><pre><code class="java">//工厂的接口public interface MapFactorys {    public static MapFactorys createFactory(String selected){        MapFactorys mapFactorys = null;        switch (selected){            case &quot;MapAFactory&quot;:                mapFactorys = new MapAFactory();                break;            case &quot;MapBFactory&quot;:                mapFactorys = new MapBFactory();                break;                default:                    mapFactorys = null;        }        return mapFactorys;    }    public GameMap createMap();}//具体的工厂public class MapAFactory implements MapFactorys{    public GameMap createMap() {        return new MapA();    }}public class MapBFactory implements MapFactorys{    public GameMap createMap() {        return new MapB();    }}</code></pre><p>确实，单一工厂只生产单一产品，在这里就是只生产单一的地图。<br>客户端的逻辑基本不需要变。</p><pre><code class="java">import java.util.Scanner;public class Client {    public static void main(String[] args){        Scanner scan = new Scanner(System.in);        String selected = &quot;&quot;;        GameMap map = null;        if(scan.hasNext()){            selected = scan.next();        }        if(!selected.isEmpty()) {            map = MapFactorys.createFactory(selected).createMap();        }        if(map!=null) map.draw();    }}</code></pre><p>这样改的好处目前是看不来的，这是因为没看到我们用工厂生产一个东西有多么复杂，试想如果构建一个东西需要很多先决条件呢，也就是必须分为几步的话，不同的地图，这几步还不一样的话，工厂模式的好处就会体现出来，成功的分离了产品和产品之间的变化点。</p><p>但是工厂模式仍然有比较大的麻烦，相信大家也发现了，在工厂接口中的静态方法，免不了还是一堆的条件判断。</p><p>未完待续。。。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 设计模式 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 设计模式,工厂模式 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>设计模式-简单工厂模式</title>
       <link href="/2018/10/18/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/"/>
       <url>/2018/10/18/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</url>

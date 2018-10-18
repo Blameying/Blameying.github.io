@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://note.xblame.top/"/>
-  <updated>2018-10-18T03:30:26.910Z</updated>
+  <updated>2018-10-18T07:57:39.560Z</updated>
   <id>http://note.xblame.top/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>设计模式-工厂模式</title>
+    <link href="http://note.xblame.top/2018/10/18/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/"/>
+    <id>http://note.xblame.top/2018/10/18/设计模式-工厂模式/</id>
+    <published>2018-10-18T03:33:39.000Z</published>
+    <updated>2018-10-18T07:57:39.560Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;上一篇遗漏了一些问题，工厂模式特别适合那种创建比较复杂的对象，这样将创建的任务交给其他部分，使得客户端代码更简介，调用更方便。后来者少写代码，减少代码的重复，提高复用性。&lt;br&gt;简单工厂模式比工厂模式简单，但工厂模式是简单工厂模式的进化么？我觉得不是，因为该少的东西一点都没
+        
+      
+    
+    </summary>
+    
+      <category term="设计模式" scheme="http://note.xblame.top/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+    
+      <category term="设计模式,工厂模式" scheme="http://note.xblame.top/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>设计模式-简单工厂模式</title>
