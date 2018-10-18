@@ -312,10 +312,10 @@
     
     
 
-    <!-- Custom Head --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    <!-- Custom Head -->
     
 
-</head>
+<link rel="stylesheet" href="/css/prism-dark.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 
     
@@ -500,74 +500,74 @@
         <p>公认的有理之言已经被传递的铺天盖地，不多我一个传播者，所以我说一下自己的思考，还希望看到的人对有错存疑之言不吝赐教。</p>
 <p>设计模式是在实践中总结出的做出更好的软件的一些方法，什么是更好的软件，就我看来是在当前基础上不管是修改还是添加，都能给开发者省点力气的软件。能做到这点就足以说明这个软件的结构很好，并且在开发的时候不仅考虑了眼下的事情，还考虑了将来的事。应用设计模式的代码不一定性能更优，不一定代码更少，这取决于代码的体量和计划中的生存周期。</p>
 <p>我们玩游戏一般都会有各种各样的地图，我们可以灵活的在各种地图之间切换,那么一般直觉的设计是下面这样的:</p>
-<pre><code class="java">public class Client{
-    //客户端类
-    //在这里接受用户输入
-    //判断输入是哪种地图，然后生成指定的地图。
-    /*
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Client</span><span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">//客户端类</span>
+    <span class="token comment" spellcheck="true">//在这里接受用户输入</span>
+    <span class="token comment" spellcheck="true">//判断输入是哪种地图，然后生成指定的地图。</span>
+    <span class="token comment" spellcheck="true">/*
         switch(选择)
         {
             case XX :
           ............
         }
-    */
-}
+    */</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>相信上面的简明代码大家都能看懂，这个代码一看上去是没有问题的，不妨多想一步，我每次增加或者修改地图，都需要重新修改客户端代码，一是容易污染客户端代码，随着地图的增加，开发者对客户端代码编辑次数增加，难免会误动其他代码，或者多个人同时需要修改不同的东西，而这些东西都在客户端，同步问题，版本控制问题就会都暴露出来，由此可见，这不是客户端应该干的事，我们应该把选择地图这件事分离出来。</p>
 <p>容易想到，我们建立一个单独的类，客户端只负责给它想要的类的名字，产生地图的细节和根据名字做出判断都交给这个类来做，那事情是不是就解决了? 客户端中获知这些类叫什么，有多少地图，这都是非代码信息，完全可以用配置文件或者用户输入来解决，也就是说我们让客户端真正分离出去了，再也不用修改客户端。代码示例如下</p>
-<pre><code class="java">//定义统一的调用接口
-public interface GameMap{
-    public void draw();
-}
-//普通地图类 A 和 B
-public class MapA implements GameMap{
-    public void draw(){
-        System.out.println(&quot;This is MapA&quot;);        
-    }
-}
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//定义统一的调用接口</span>
+<span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">GameMap</span><span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">draw</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">//普通地图类 A 和 B</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MapA</span> <span class="token keyword">implements</span> <span class="token class-name">GameMap</span><span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">draw</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"This is MapA"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>        
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-public class MapB implements GameMap{
-    public void draw(){
-        System.out.println(&quot;This is MapB&quot;);
-    }
-}
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MapB</span> <span class="token keyword">implements</span> <span class="token class-name">GameMap</span><span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">draw</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"This is MapB"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-//负责处理地图选择的逻辑
-public class GameMapFactory{
-    private static GameMap map;
-    public static GameMap getMap(String selected){
-        switch (selected){
-            case &quot;MapA&quot;:
-                map = new MapA();
-                break;
-            case &quot;MapB&quot;:
-                map = new MapB();
-                break;
-            default:
-                map = null;
-                break;
-        }
-        return map;
-    }
-}
+<span class="token comment" spellcheck="true">//负责处理地图选择的逻辑</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">GameMapFactory</span><span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> GameMap map<span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> GameMap <span class="token function">getMap</span><span class="token punctuation">(</span>String selected<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">switch</span> <span class="token punctuation">(</span>selected<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">case</span> <span class="token string">"MapA"</span><span class="token operator">:</span>
+                map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MapA</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token keyword">case</span> <span class="token string">"MapB"</span><span class="token operator">:</span>
+                map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MapB</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token keyword">default</span><span class="token operator">:</span>
+                map <span class="token operator">=</span> null<span class="token punctuation">;</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> map<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-import java.util.Scanner;
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>Scanner<span class="token punctuation">;</span>
 
-public class Client {
-    public static void main(String[] args){
-        Scanner scan = new Scanner(System.in);
-        String selected = &quot;&quot;;
-        GameMap map = null;
-                //地图名可以从输入得到，但更合适的是从配置文件得到。
-        if(scan.hasNext()){
-            selected = scan.next();
-        }
-        if(!selected.isEmpty()) {
-            map = GameMapFactory.getMap(selected);
-        }
-        if(map!=null) map.draw();
-    }
-}
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Client</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        Scanner scan <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Scanner</span><span class="token punctuation">(</span>System<span class="token punctuation">.</span>in<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        String selected <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span>
+        GameMap map <span class="token operator">=</span> null<span class="token punctuation">;</span>
+                <span class="token comment" spellcheck="true">//地图名可以从输入得到，但更合适的是从配置文件得到。</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>scan<span class="token punctuation">.</span><span class="token function">hasNext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            selected <span class="token operator">=</span> scan<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>selected<span class="token punctuation">.</span><span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            map <span class="token operator">=</span> GameMapFactory<span class="token punctuation">.</span><span class="token function">getMap</span><span class="token punctuation">(</span>selected<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>map<span class="token operator">!=</span>null<span class="token punctuation">)</span> map<span class="token punctuation">.</span><span class="token function">draw</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>这样我们每次扩展或者修改的时候只需要单独修改 GameMapFactory 的源码就可以。 然而等到地图多了，这里面的代码仍然会不太优美。所以人们又想出了工厂模式。</p>
 <p>未完待续。。。</p>
@@ -957,10 +957,6 @@ It will not impact the appearance and can give developers a lot of support :)
 <!-- Import prettify js  -->
 
 
-    
-        <script>lsloader.load("hanabi","/js/hanabi-browser-bundle.js?Pki5+pzkluqu53g+ouMWpA==", true)</script>
-    
-
 
 <!-- Window Load -->
 <!-- add class for prettify -->
@@ -971,10 +967,6 @@ It will not impact the appearance and can give developers a lot of support :)
     });
 
     
-    
-        
-        
-        HanabiBrowser.start('pre code',true);
     
 </script>
 
@@ -1033,7 +1025,24 @@ console.log('\n %c © Material Theme | Version: 1.5.6 | https://github.com/viose
 </script>
 
                 </main>
-            </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+            </div><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
         </body>
     
 </html>

@@ -312,10 +312,10 @@
     
     
 
-    <!-- Custom Head --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    <!-- Custom Head -->
     
 
-</head>
+<link rel="stylesheet" href="/css/prism-dark.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 
     
@@ -489,7 +489,7 @@
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <p>这几天因为一直在看操作系统和文件系统相关的书，了解到了MBR的作用的结构，记录一下。<br>MBR(master boot record)主引导记录位于存储设备的绝对零扇区，这里的绝对零扇区是指物理上的起点。MBR整个结构共占用<strong>512</strong>Byte。接下来用一个C语言结构体来表示一下</p>
-<pre><code class="language-c line-numbers">struct MBR{
+<pre class=" language-language-c line-numbers"><code class="language-language-c line-numbers">struct MBR{
     uint8 PartCode[446];    //MBR引导程序
     struct Partition DPT[4];    //四个分区信息
     uint8 BootSectSig0;     //55
@@ -900,10 +900,6 @@ It will not impact the appearance and can give developers a lot of support :)
 <!-- Import prettify js  -->
 
 
-    
-        <script>lsloader.load("hanabi","/js/hanabi-browser-bundle.js?Pki5+pzkluqu53g+ouMWpA==", true)</script>
-    
-
 
 <!-- Window Load -->
 <!-- add class for prettify -->
@@ -914,10 +910,6 @@ It will not impact the appearance and can give developers a lot of support :)
     });
 
     
-    
-        
-        
-        HanabiBrowser.start('pre code',true);
     
 </script>
 
@@ -976,7 +968,24 @@ console.log('\n %c © Material Theme | Version: 1.5.6 | https://github.com/viose
 </script>
 
                 </main>
-            </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+            </div><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
         </body>
     
 </html>

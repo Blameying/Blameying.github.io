@@ -312,10 +312,10 @@
     
     
 
-    <!-- Custom Head --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    <!-- Custom Head -->
     
 
-</head>
+<link rel="stylesheet" href="/css/prism-dark.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 
     
@@ -498,27 +498,27 @@
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <p>Archlinux 软件源中有boost 不需要自己编译安装。</p>
-<pre><code class="bash">sudo pacman -S boost
+<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> pacman -S boost
 </code></pre>
 <p>刷新一下当前环境</p>
 <pre><code>ldconfig
 </code></pre><p>新建立一个代码文件，测试一下boost库是否安装成功了。</p>
-<pre><code class="cpp">#include &lt;boost/timer.hpp&gt; //boost库统一用hpp
-#include &lt;iostream&gt;
-using namespace boost;
-using namespace std;
+<pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;boost/timer.hpp></span> </span><span class="token comment" spellcheck="true">//boost库统一用hpp</span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> boost<span class="token punctuation">;</span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
 
-int main()
-{
-    timer t;
-    cout &lt;&lt; &quot;max timespan:&quot; &lt;&lt; t.elapsed_max() / 3600 &lt;&lt; &quot;h&quot; &lt;&lt; endl;
-    cout &lt;&lt; &quot;min timespan:&quot; &lt;&lt; t.elapsed_min() &lt;&lt; &quot;s&quot; &lt;&lt; endl;
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    timer t<span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"max timespan:"</span> <span class="token operator">&lt;&lt;</span> t<span class="token punctuation">.</span><span class="token function">elapsed_max</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">3600</span> <span class="token operator">&lt;&lt;</span> <span class="token string">"h"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"min timespan:"</span> <span class="token operator">&lt;&lt;</span> t<span class="token punctuation">.</span><span class="token function">elapsed_min</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> <span class="token string">"s"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
 
-    cout &lt;&lt; &quot;now time elapsed:&quot; &lt;&lt; t.elapsed() &lt;&lt; &quot;s&quot; &lt;&lt; endl;
-}
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"now time elapsed:"</span> <span class="token operator">&lt;&lt;</span> t<span class="token punctuation">.</span><span class="token function">elapsed</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> <span class="token string">"s"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>编译的时候按照gnu的编译规矩要手动指定库文件</p>
-<pre><code class="bash">g++ source_filename.cpp -lboost_timer -o execute_filename
+<pre class=" language-bash"><code class="language-bash">g++ source_filename.cpp -lboost_timer -o execute_filename
 </code></pre>
 <p>这里用-lboost_timer是因为我们用到了timer头文件。用其他库要改成-lboost_xxx</p>
 
@@ -907,10 +907,6 @@ It will not impact the appearance and can give developers a lot of support :)
 <!-- Import prettify js  -->
 
 
-    
-        <script>lsloader.load("hanabi","/js/hanabi-browser-bundle.js?Pki5+pzkluqu53g+ouMWpA==", true)</script>
-    
-
 
 <!-- Window Load -->
 <!-- add class for prettify -->
@@ -921,10 +917,6 @@ It will not impact the appearance and can give developers a lot of support :)
     });
 
     
-    
-        
-        
-        HanabiBrowser.start('pre code',true);
     
 </script>
 
@@ -983,7 +975,24 @@ console.log('\n %c © Material Theme | Version: 1.5.6 | https://github.com/viose
 </script>
 
                 </main>
-            </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+            </div><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
         </body>
     
 </html>
