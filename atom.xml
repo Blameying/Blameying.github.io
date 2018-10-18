@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://note.xblame.top/"/>
-  <updated>2018-10-16T13:22:29.176Z</updated>
+  <updated>2018-10-18T03:30:26.910Z</updated>
   <id>http://note.xblame.top/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>设计模式-简单工厂模式</title>
+    <link href="http://note.xblame.top/2018/10/18/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/"/>
+    <id>http://note.xblame.top/2018/10/18/设计模式-简单工厂模式/</id>
+    <published>2018-10-18T02:11:16.000Z</published>
+    <updated>2018-10-18T03:30:26.910Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;公认的有理之言已经被传递的铺天盖地，不多我一个传播者，所以我说一下自己的思考，还希望看到的人对有错存疑之言不吝赐教。&lt;/p&gt;
+&lt;p&gt;设计模式是在实践中总结出的做出更好的软件的一些方法，什么是更好的软件，就我看来是在当前基础上不管是修改还是添加，都能给开发者省点力气的软件。能
+        
+      
+    
+    </summary>
+    
+      <category term="设计模式" scheme="http://note.xblame.top/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+    
+      <category term="设计模式,工厂模式" scheme="http://note.xblame.top/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>Archlinux 安装.net core</title>
