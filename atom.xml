@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://note.xblame.top/"/>
-  <updated>2018-10-19T12:18:54.813Z</updated>
+  <updated>2018-10-20T02:02:38.479Z</updated>
   <id>http://note.xblame.top/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>设计模式-观察者模式</title>
+    <link href="http://note.xblame.top/2018/10/19/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/"/>
+    <id>http://note.xblame.top/2018/10/19/设计模式-观察者模式/</id>
+    <published>2018-10-19T12:21:14.000Z</published>
+    <updated>2018-10-20T02:02:38.479Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;设计模式理解到什么地步才叫理解呢，我阅历还浅，讲道理也是讲想象中的道理，难免中气不足。我觉得设计模式并不难，当一件事很复杂的时候，是很难看出到底是用哪种设计模式的，因为他可能什么模式都有，严格定义的话，又什么设计模式都不是,可能需要划分成很多小部分。就我而言，设计模式给了我
+        
+      
+    
+    </summary>
+    
+      <category term="设计模式" scheme="http://note.xblame.top/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+    
+      <category term="设计模式,观察者" scheme="http://note.xblame.top/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A7%82%E5%AF%9F%E8%80%85/"/>
+    
+  </entry>
   
   <entry>
     <title>设计模式-策略模式</title>
