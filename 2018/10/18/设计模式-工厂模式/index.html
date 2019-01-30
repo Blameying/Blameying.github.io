@@ -509,7 +509,7 @@
         <p>上一篇遗漏了一些问题，工厂模式特别适合那种创建比较复杂的对象，这样将创建的任务交给其他部分，使得客户端代码更简介，调用更方便。后来者少写代码，减少代码的重复，提高复用性。<br>简单工厂模式比工厂模式简单，但工厂模式是简单工厂模式的进化么？我觉得不是，因为该少的东西一点都没少，那工厂模式多了什么？</p>
 <p>工厂模式的思路大概是这样的，还用上一篇游戏地图的例子，每一个地图所需要的参数和定制有可能是不一样的，要不要为每一个地图单独适配一个自己专门的工厂呢，我们把复杂的创建逻辑放在属于这个地图的工厂里，那这样，彼此的工厂不会混乱，地图本身的类也更符合一个模型的结构。这就是工厂模式，为每一个地图创建一个单独的工厂。</p>
 <p>那么依据面向接口编程的原则，给出地图的代码</p>
-<pre><code class="java">//定义统一的调用接口
+<pre><code class="lang-java">//定义统一的调用接口
 public interface GameMap{
     public void draw();
 }
@@ -527,7 +527,7 @@ public class MapB implements GameMap{
 }
 </code></pre>
 <p>接下来是工厂类的结构</p>
-<pre><code class="java">//工厂的接口
+<pre><code class="lang-java">//工厂的接口
 public interface MapFactorys {
     public static MapFactorys createFactory(String selected){
         MapFactorys mapFactorys = null;
@@ -562,7 +562,7 @@ public class MapBFactory implements MapFactorys{
 }
 </code></pre>
 <p>确实，单一工厂只生产单一产品，在这里就是只生产单一的地图。<br>客户端的逻辑基本不需要变。</p>
-<pre><code class="java">import java.util.Scanner;
+<pre><code class="lang-java">import java.util.Scanner;
 
 public class Client {
     public static void main(String[] args){
@@ -745,7 +745,7 @@ public class Client {
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2018/10/">十月 2018<span class="sidebar_archives-count">10</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">6</span></a>
+                <a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">十月 2018<span class="sidebar_archives-count">10</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">6</span></a>
             </li></ul>
         </li>
         
@@ -763,7 +763,7 @@ public class Client {
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/Boost/">Boost<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/代码/">代码<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/操作系统/">操作系统<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/疑难杂症/">疑难杂症<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/设计模式/">设计模式<span class="sidebar_archives-count">7</span></a>
+                <a class="sidebar_archives-link" href="/categories/Boost/">Boost<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/代码/">代码<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/操作系统/">操作系统<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/疑难杂症/">疑难杂症<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/设计模式/">设计模式<span class="sidebar_archives-count">7</span></a>
             </li></ul>
         </li>
         

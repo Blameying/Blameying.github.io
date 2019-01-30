@@ -508,12 +508,12 @@
     
         <p>策略模式是一种选择，给一个灵活的接口，然后去选择，只要是这个接口下的子类，我们都能去选，在不同的场合，选择会不同，这就是策略。客户端或者是决策者，是依赖于这个接口的，而不依赖具体的实现。</p>
 <p>如排序算法是有很多种的，所有排序算法都可以实现排序这个接口。</p>
-<pre><code class="java">public interface SortInterface {
+<pre><code class="lang-java">public interface SortInterface {
     public void sort(int[] data);
 }
 </code></pre>
 <p>然后我们创建实现这个接口的具体类</p>
-<pre><code class="java">public class BubbleSort implements SortInterface{
+<pre><code class="lang-java">public class BubbleSort implements SortInterface{
     public void sort(int[] data) {
         //假装排序
         //TO-DO 冒泡排序的逻辑
@@ -529,7 +529,7 @@ public class QuickSort implements SortInterface{
 }
 </code></pre>
 <p>可供选择的项已经做好了。<br>那么我们要做关于策略的选择了</p>
-<pre><code class="java">public class Client {
+<pre><code class="lang-java">public class Client {
     SortInterface sortTool = null;
     public Client(SortInterface sortTool){
         this.sortTool = sortTool;
@@ -707,7 +707,7 @@ public class QuickSort implements SortInterface{
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2018/10/">十月 2018<span class="sidebar_archives-count">10</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">6</span></a>
+                <a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">十月 2018<span class="sidebar_archives-count">10</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">6</span></a>
             </li></ul>
         </li>
         
@@ -725,7 +725,7 @@ public class QuickSort implements SortInterface{
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/Boost/">Boost<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/代码/">代码<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/操作系统/">操作系统<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/疑难杂症/">疑难杂症<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/设计模式/">设计模式<span class="sidebar_archives-count">7</span></a>
+                <a class="sidebar_archives-link" href="/categories/Boost/">Boost<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/代码/">代码<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/操作系统/">操作系统<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/疑难杂症/">疑难杂症<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/设计模式/">设计模式<span class="sidebar_archives-count">7</span></a>
             </li></ul>
         </li>
         

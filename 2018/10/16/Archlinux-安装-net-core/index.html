@@ -507,31 +507,31 @@
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <p>从Arch源安装:</p>
-<pre><code class="bash">sudo pacman -S dotnet-sdk
+<pre><code class="lang-bash">sudo pacman -S dotnet-sdk
 </code></pre>
 <p>这个时候已经安装了.net core<br>找一个心仪的存放工程的目录</p>
-<pre><code class="bash">dotnet new mvc --auth Individual -o YouProjectName
+<pre><code class="lang-bash">dotnet new mvc --auth Individual -o YouProjectName
 </code></pre>
-<p>这里的几个参数解释一下，new 是创建新工程，类似于django，rails创建工程时的模式。<br>mvc是指建立web工程，–auth是认证方式，这里几个可选的参数，具体说明参见<a href="https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-new?tabs=netcore21" target="_blank" rel="noopener">MSDN</a><br>一般教程讲到这就是运行工程了</p>
-<pre><code class="bash">cd YouProjectName
+<p>这里的几个参数解释一下，new 是创建新工程，类似于django，rails创建工程时的模式。<br>mvc是指建立web工程，—auth是认证方式，这里几个可选的参数，具体说明参见<a href="https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-new?tabs=netcore21" target="_blank" rel="noopener">MSDN</a><br>一般教程讲到这就是运行工程了</p>
+<pre><code class="lang-bash">cd YouProjectName
 dotnet run
 </code></pre>
 <p>但是在我这边出了些问题，提示如下：</p>
 <blockquote>
-<p>System.InvalidOperationException: Unable to configure HTTPS endpoint. No server certificate was specified, and the default developer certificate could not be found.To generate a developer certificate run ‘dotnet dev-certs https’. To trust the certificate (Windows and macOS only) run ‘dotnet dev-certs https –trust’. For more information on configuring HTTPS see <a href="https://go.microsoft.com/fwlink/?linkid=848054" target="_blank" rel="noopener">https://go.microsoft.com/fwlink/?linkid=848054</a>.</p>
+<p>System.InvalidOperationException: Unable to configure HTTPS endpoint. No server certificate was specified, and the default developer certificate could not be found.To generate a developer certificate run ‘dotnet dev-certs https’. To trust the certificate (Windows and macOS only) run ‘dotnet dev-certs https —trust’. For more information on configuring HTTPS see <a href="https://go.microsoft.com/fwlink/?linkid=848054" target="_blank" rel="noopener">https://go.microsoft.com/fwlink/?linkid=848054</a>.</p>
 </blockquote>
 <p>解决方案如下：</p>
-<pre><code class="bash">dotnet tool install --global dotnet-dev-certs
+<pre><code class="lang-bash">dotnet tool install --global dotnet-dev-certs
 </code></pre>
 <p>然后执行</p>
-<pre><code class="bash">dotnet dev-certs https
+<pre><code class="lang-bash">dotnet dev-certs https
 </code></pre>
 <p>如果提示错误：</p>
 <blockquote>
 <p>A fatal error occurred, the required library libhostfxr.so</p>
 </blockquote>
 <p>接下来设置环境变量</p>
-<pre><code class="bash">export DOTNET_ROOT=/opt/dotnet
+<pre><code class="lang-bash">export DOTNET_ROOT=/opt/dotnet
 </code></pre>
 <p>重新执行出错的那句。</p>
 <p>可以把设置环境变量的语句放入<br>~/.bashrc 或者 ~/.xprofile文件，这样就不需要每次手动加载了。</p>
@@ -698,7 +698,7 @@ dotnet run
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2018/10/">十月 2018<span class="sidebar_archives-count">10</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">6</span></a>
+                <a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">十月 2018<span class="sidebar_archives-count">10</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">6</span></a>
             </li></ul>
         </li>
         
@@ -716,7 +716,7 @@ dotnet run
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/Boost/">Boost<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/代码/">代码<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/操作系统/">操作系统<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/疑难杂症/">疑难杂症<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/设计模式/">设计模式<span class="sidebar_archives-count">7</span></a>
+                <a class="sidebar_archives-link" href="/categories/Boost/">Boost<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/代码/">代码<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/操作系统/">操作系统<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/疑难杂症/">疑难杂症<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/设计模式/">设计模式<span class="sidebar_archives-count">7</span></a>
             </li></ul>
         </li>
         

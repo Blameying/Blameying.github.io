@@ -508,7 +508,7 @@
     
         <p>走过了简单工厂模式和工厂模式，我来了解一下抽象工厂模式，现在已经知道“工厂”二字的含义了，就是帮别人建造对象，想想JDBC(数据库连接库)中用到的getConnection之类的方法，这就是工厂模式的应用啊。但是简单工厂模式和工厂模式都存在那个添加和修改必须更改以前代码的问题，这是不符合开闭原则的，也不是我们非要鸡蛋里挑骨头，而是在大体量的项目中，能不重新编译就不重新编译，能不引入更多变数就不引入更多变数，更希望的是像vscode编辑器的插件一样，这样的扩展性让人很舒服，开发者不需要修改官方的源码，每个人都可以互相不影响的开发插件。</p>
 <p>那么如何令工厂模式符合开闭原则呢，能不能我从配置文件中动态获取类的名称然后自动的选择调用哪个工厂呢，当然可以。</p>
-<pre><code class="java">MapFactorys myMap = Class.forName(&quot;MapAFactory&quot;).newInstance();
+<pre><code class="lang-java">MapFactorys myMap = Class.forName(&quot;MapAFactory&quot;).newInstance();
 </code></pre>
 <p>当提供的参数变成字符串的话，我们的可操作性就变大了。其实用Ruby这样的元编程语言能把工厂模式做的更好。</p>
 <p>接下来看一下抽象工厂模式<br>工厂模式和抽象工厂模式最大的区别就是</p>
@@ -518,7 +518,7 @@
 </ul>
 <p>一个游戏肯定不止有地图，这个地图上得有对应的野怪，得有对应的据点吧，得有杂七杂八的其他东西，我们前面已经这么较真设计了，肯定忍受不了这么多东西都把责任扔在地图身上。<br>一个工厂可不可以在建立地图的时候，把这张图对应的各个品种的野怪和各个类型的据点(建筑物)给搞定呢。</p>
 <p>在原来的代码的基础上添加Monster相关</p>
-<pre><code class="java">//Monster 接口
+<pre><code class="lang-java">//Monster 接口
 public interface Monster {
     public void say();
 }
@@ -536,7 +536,7 @@ public class MonsterB implements Monster {
 }
 </code></pre>
 <p>修改一下工厂相关</p>
-<pre><code class="java">
+<pre><code class="lang-java">
 public interface Factorys {
     public static Factorys getFactory(String select){
         Factorys factorys = null;
@@ -767,7 +767,7 @@ public class Client {
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2018/10/">十月 2018<span class="sidebar_archives-count">10</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">6</span></a>
+                <a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">十月 2018<span class="sidebar_archives-count">10</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">6</span></a>
             </li></ul>
         </li>
         
@@ -785,7 +785,7 @@ public class Client {
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/Boost/">Boost<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/代码/">代码<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/操作系统/">操作系统<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/疑难杂症/">疑难杂症<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/设计模式/">设计模式<span class="sidebar_archives-count">7</span></a>
+                <a class="sidebar_archives-link" href="/categories/Boost/">Boost<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/代码/">代码<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/操作系统/">操作系统<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/疑难杂症/">疑难杂症<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/设计模式/">设计模式<span class="sidebar_archives-count">7</span></a>
             </li></ul>
         </li>
         

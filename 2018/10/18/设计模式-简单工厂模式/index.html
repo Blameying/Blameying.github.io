@@ -509,7 +509,7 @@
         <p>公认的有理之言已经被传递的铺天盖地，不多我一个传播者，所以我说一下自己的思考，还希望看到的人对有错存疑之言不吝赐教。</p>
 <p>设计模式是在实践中总结出的做出更好的软件的一些方法，什么是更好的软件，就我看来是在当前基础上不管是修改还是添加，都能给开发者省点力气的软件。能做到这点就足以说明这个软件的结构很好，并且在开发的时候不仅考虑了眼下的事情，还考虑了将来的事。应用设计模式的代码不一定性能更优，不一定代码更少，这取决于代码的体量和计划中的生存周期。</p>
 <p>我们玩游戏一般都会有各种各样的地图，我们可以灵活的在各种地图之间切换,那么一般直觉的设计是下面这样的:</p>
-<pre><code class="java">public class Client{
+<pre><code class="lang-java">public class Client{
     //客户端类
     //在这里接受用户输入
     //判断输入是哪种地图，然后生成指定的地图。
@@ -524,7 +524,7 @@
 </code></pre>
 <p>相信上面的简明代码大家都能看懂，这个代码一看上去是没有问题的，不妨多想一步，我每次增加或者修改地图，都需要重新修改客户端代码，一是容易污染客户端代码，随着地图的增加，开发者对客户端代码编辑次数增加，难免会误动其他代码，或者多个人同时需要修改不同的东西，而这些东西都在客户端，同步问题，版本控制问题就会都暴露出来，由此可见，这不是客户端应该干的事，我们应该把选择地图这件事分离出来。</p>
 <p>容易想到，我们建立一个单独的类，客户端只负责给它想要的类的名字，产生地图的细节和根据名字做出判断都交给这个类来做，那事情是不是就解决了? 客户端中获知这些类叫什么，有多少地图，这都是非代码信息，完全可以用配置文件或者用户输入来解决，也就是说我们让客户端真正分离出去了，再也不用修改客户端。代码示例如下</p>
-<pre><code class="java">//定义统一的调用接口
+<pre><code class="lang-java">//定义统一的调用接口
 public interface GameMap{
     public void draw();
 }
@@ -743,7 +743,7 @@ public class Client {
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2018/10/">十月 2018<span class="sidebar_archives-count">10</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">6</span></a>
+                <a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">十月 2018<span class="sidebar_archives-count">10</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">6</span></a>
             </li></ul>
         </li>
         
@@ -761,7 +761,7 @@ public class Client {
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/Boost/">Boost<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/代码/">代码<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/操作系统/">操作系统<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/疑难杂症/">疑难杂症<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/设计模式/">设计模式<span class="sidebar_archives-count">7</span></a>
+                <a class="sidebar_archives-link" href="/categories/Boost/">Boost<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/代码/">代码<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/操作系统/">操作系统<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/疑难杂症/">疑难杂症<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/设计模式/">设计模式<span class="sidebar_archives-count">7</span></a>
             </li></ul>
         </li>
         

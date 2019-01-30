@@ -511,13 +511,13 @@
 <p>这个可以使得不同粗细的水管接在一起。</p>
 <p>又比如我们用的网线有一种接口，那么光纤解码器也是一种适配器。不变的是其中流动的数据，就像上图中不变的是流动的水。</p>
 <p>在代码中，有时需要使用一些外部的资源，或者对已有的资源定义一种新的接口都可以应用适配器模式。我们不妨先定义一种接口</p>
-<pre><code class="java">public interface WeatherGet {
+<pre><code class="lang-java">public interface WeatherGet {
         //通过城市名获得城市天气数据
     public String getTheCityWeather(String city);
 }
 </code></pre>
 <p>而原有的代码接口可能是这样的:</p>
-<pre><code class="java">public class CityWeather {
+<pre><code class="lang-java">public class CityWeather {
     public String getWeather(int id){
         String weather = &quot;&quot;;
         //假设1是北京的id
@@ -535,7 +535,7 @@
 <p>看到这里我们不能重写一个CityWeather,因为那样会耗时耗力，这里有现成的，实在不想写，并且获取天气的代码可能是私有的</p>
 <p>要不把接口改了? 可是我们不止从一个天气发布源获取天气数据，改了接口，以前的其他代码就不能用了。</p>
 <p>这就是适配器的应用场合了，</p>
-<pre><code class="java">public class AdaptorForCityWeather extends CityWeather implements WeatherGet {
+<pre><code class="lang-java">public class AdaptorForCityWeather extends CityWeather implements WeatherGet {
 
     public String getTheCityWeather(String city) {
         int weather_id = 0;
@@ -555,13 +555,13 @@
 }
 </code></pre>
 <p>这样我们完全可以这么用了:</p>
-<pre><code class="java">WeatherGet weatherGet = new AdaptorForCityWeather();
+<pre><code class="lang-java">WeatherGet weatherGet = new AdaptorForCityWeather();
 System.out.println(weatherGet.getTheCityWeather(&quot;Beijing&quot;));
 </code></pre>
 <p>方法调用起来和其他的没什么两样，完全可以放进列表中循环调用。只要实现我们用的接口，我们就不需要关注其他的差异。</p>
 <p>如果我们比较贪心，想要一个接口实现多个接口不同的已有类的功能怎么办，可以看到我们上面用的是继承，很多语言是不支持多继承的，比如java</p>
 <p>这样可以用关联的方式，通过生成旧类的变量来实现那么上面的接口类可以略作修改</p>
-<pre><code class="java">public class AdaptorForCityWeather implements WeatherGet {
+<pre><code class="lang-java">public class AdaptorForCityWeather implements WeatherGet {
 
     public String getTheCityWeather(String city) {
                 CityWeather cityWeather = new CityWeather();
@@ -746,7 +746,7 @@ System.out.println(weatherGet.getTheCityWeather(&quot;Beijing&quot;));
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2018/10/">十月 2018<span class="sidebar_archives-count">10</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">6</span></a>
+                <a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">十月 2018<span class="sidebar_archives-count">10</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">6</span></a>
             </li></ul>
         </li>
         
@@ -764,7 +764,7 @@ System.out.println(weatherGet.getTheCityWeather(&quot;Beijing&quot;));
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/Boost/">Boost<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/代码/">代码<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/操作系统/">操作系统<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/疑难杂症/">疑难杂症<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/设计模式/">设计模式<span class="sidebar_archives-count">7</span></a>
+                <a class="sidebar_archives-link" href="/categories/Boost/">Boost<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/代码/">代码<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/操作系统/">操作系统<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/疑难杂症/">疑难杂症<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/设计模式/">设计模式<span class="sidebar_archives-count">7</span></a>
             </li></ul>
         </li>
         

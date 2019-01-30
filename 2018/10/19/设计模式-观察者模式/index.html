@@ -515,21 +515,20 @@
 <li>通知所有观察者信息</li>
 </ul>
 <p>所以把被观察的对象做成如下这样</p>
-<pre><code class="java">
+<pre><code class="lang-java">
 public interface Observable {
     public Boolean attachObserver(MyObserver observer);
     public Boolean removeObserver(MyObserver observer);
     public void notifyAllObservers();
 }
-
 </code></pre>
 <p>相应的对于观察者来说，要提供一个统一的方法来获取信息。</p>
-<pre><code class="java">public interface MyObserver {
+<pre><code class="lang-java">public interface MyObserver {
     public void update(String info);
 }
 </code></pre>
 <p>假设有一家报社，要为用户提供新闻订阅业务</p>
-<pre><code class="java">//用户
+<pre><code class="lang-java">//用户
 public class Order implements MyObserver{
 
     private String name;
@@ -571,7 +570,7 @@ public class NewspaperOffice implements Observable{
 }
 </code></pre>
 <p>这样，当我们有新用户需要添加的时候，</p>
-<pre><code class="java">public class Client {
+<pre><code class="lang-java">public class Client {
     public static void main(String[] args) {
         MyObserver observer1 = new Order(&quot;observer1&quot;);
         MyObserver observer2 = new Order(&quot;observer2&quot;);
@@ -641,6 +640,14 @@ public class NewspaperOffice implements Observable{
             <!-- Post Prev & Next Nav -->
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
+    
+        <a href="/2019/01/30/最大连续子数组和/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
     
 
     <!-- Section Spacer -->
@@ -740,7 +747,7 @@ public class NewspaperOffice implements Observable{
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2018/10/">十月 2018<span class="sidebar_archives-count">10</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">6</span></a>
+                <a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">十月 2018<span class="sidebar_archives-count">10</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">6</span></a>
             </li></ul>
         </li>
         
@@ -758,7 +765,7 @@ public class NewspaperOffice implements Observable{
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/Boost/">Boost<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/代码/">代码<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/操作系统/">操作系统<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/疑难杂症/">疑难杂症<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/设计模式/">设计模式<span class="sidebar_archives-count">7</span></a>
+                <a class="sidebar_archives-link" href="/categories/Boost/">Boost<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/代码/">代码<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/操作系统/">操作系统<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/疑难杂症/">疑难杂症<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/设计模式/">设计模式<span class="sidebar_archives-count">7</span></a>
             </li></ul>
         </li>
         

@@ -507,12 +507,12 @@
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <p>Archlinux 软件源中有boost 不需要自己编译安装。</p>
-<pre><code class="bash">sudo pacman -S boost
+<pre><code class="lang-bash">sudo pacman -S boost
 </code></pre>
 <p>刷新一下当前环境</p>
 <pre><code>ldconfig
 </code></pre><p>新建立一个代码文件，测试一下boost库是否安装成功了。</p>
-<pre><code class="cpp">#include &lt;boost/timer.hpp&gt; //boost库统一用hpp
+<pre><code class="lang-cpp">#include &lt;boost/timer.hpp&gt; //boost库统一用hpp
 #include &lt;iostream&gt;
 using namespace boost;
 using namespace std;
@@ -527,7 +527,7 @@ int main()
 }
 </code></pre>
 <p>编译的时候按照gnu的编译规矩要手动指定库文件</p>
-<pre><code class="bash">g++ source_filename.cpp -lboost_timer -o execute_filename
+<pre><code class="lang-bash">g++ source_filename.cpp -lboost_timer -o execute_filename
 </code></pre>
 <p>这里用-lboost_timer是因为我们用到了timer头文件。用其他库要改成-lboost_xxx</p>
 
@@ -693,7 +693,7 @@ int main()
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2018/10/">十月 2018<span class="sidebar_archives-count">10</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">6</span></a>
+                <a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">十月 2018<span class="sidebar_archives-count">10</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">6</span></a>
             </li></ul>
         </li>
         
@@ -711,7 +711,7 @@ int main()
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/Boost/">Boost<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/代码/">代码<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/操作系统/">操作系统<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/疑难杂症/">疑难杂症<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/设计模式/">设计模式<span class="sidebar_archives-count">7</span></a>
+                <a class="sidebar_archives-link" href="/categories/Boost/">Boost<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/代码/">代码<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/操作系统/">操作系统<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/疑难杂症/">疑难杂症<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/设计模式/">设计模式<span class="sidebar_archives-count">7</span></a>
             </li></ul>
         </li>
         

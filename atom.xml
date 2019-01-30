@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://note.xblame.top/"/>
-  <updated>2019-01-30T03:38:11.006Z</updated>
+  <updated>2019-01-30T09:03:54.750Z</updated>
   <id>http://note.xblame.top/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>算法学习-寻找最大子数组和</title>
+    <link href="http://note.xblame.top/2019/01/30/%E6%9C%80%E5%A4%A7%E8%BF%9E%E7%BB%AD%E5%AD%90%E6%95%B0%E7%BB%84%E5%92%8C/"/>
+    <id>http://note.xblame.top/2019/01/30/最大连续子数组和/</id>
+    <published>2019-01-30T09:03:54.753Z</published>
+    <updated>2019-01-30T09:03:54.750Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;通过对算法导论的再次学习，重新温习了一些比较经典的算法问题。今天看的是寻找给定数组的最大连续子数组和，问题是这样的：在给出的一个数组中，找出相加和最大的连续子数组，例如在数组&lt;em&gt;A={-1,2,3,4,-3,1}&lt;/em&gt;中，最大连续子数组为&lt;em&gt;{2,3,4}&lt;/e
+        
+      
+    
+    </summary>
+    
+      <category term="代码" scheme="http://note.xblame.top/categories/%E4%BB%A3%E7%A0%81/"/>
+    
+    
+      <category term="算法" scheme="http://note.xblame.top/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title>设计模式-观察者模式</title>
@@ -218,7 +244,7 @@
         
         
           &lt;p&gt;从Arch源安装:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;sudo pacman -S dotnet-sdk
+&lt;pre&gt;&lt;code class=&quot;lang-bash&quot;&gt;sudo pacman -S dotnet-sdk
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;这个时候已经安装了.net core&lt;br&gt;找一个心仪的存放工程的目录&lt;/p&gt;
 &lt;pre&gt;&lt;code
@@ -248,7 +274,7 @@
         
         
           &lt;p&gt;Archlinux 软件源中有boost 不需要自己编译安装。&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;sudo pacman -S
+&lt;pre&gt;&lt;code class=&quot;lang-bash&quot;&gt;sudo pacman -S
         
       
     
