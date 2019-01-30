@@ -262,8 +262,8 @@
     <meta property="og:article:tag" content="算法"> 
 
     
-        <meta property="article:published_time" content="Wed Jan 30 2019 17:22:59 GMT+0800">
-        <meta property="article:modified_time" content="Wed Jan 30 2019 17:22:59 GMT+0800">
+        <meta property="article:published_time" content="Wed Jan 30 2019 17:31:52 GMT+0800">
+        <meta property="article:modified_time" content="Wed Jan 30 2019 17:31:52 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -285,8 +285,8 @@
     "@type": "BlogPosting",
     "mainEntityOfPage": "http://note.xblame.top/2019/01/30/最大连续子数组和/index.html",
     "headline": "算法学习-寻找最大子数组和",
-    "datePublished": "Wed Jan 30 2019 17:22:59 GMT+0800",
-    "dateModified": "Wed Jan 30 2019 17:22:59 GMT+0800",
+    "datePublished": "Wed Jan 30 2019 17:31:52 GMT+0800",
+    "dateModified": "Wed Jan 30 2019 17:31:52 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "XBlame",
@@ -622,7 +622,7 @@ public:
 <p>动态规划背后的基本思想非常简单。大致上，若要解一个给定问题，我们需要解其不同部分（即子问题），再根据子问题的解以得出原问题的解。</p>
 <p>通常许多子问题非常相似，为此动态规划法试图仅仅解决每个子问题一次，从而减少计算量：一旦某个给定子问题的解已经算出，则将其记忆化存储，以便下次需要同一个子问题解之时直接查表。这种做法在重复子问题的数目关于输入的规模呈指数增长时特别有用。</p>
 </blockquote>
-<p>动态规划的关键在于重叠子问题和最优子结构，换言之局部最优和全局最优存在关系，可以通过局部最优减少得到全局最优的计算时间。<br>对于一个长度为N的数组A，已知<em>A[1，i]（1\&lt;i\&lt;n）</em>的最大子数组，则<em>A[1,i+1]</em>的最大子数组为<em>A[1,i]</em>的最大子数组或者<em>A[j,i+1]（1\&lt;j\&lt;i+1）</em></p>
+<p>动态规划的关键在于重叠子问题和最优子结构，换言之局部最优和全局最优存在关系，可以通过局部最优减少得到全局最优的计算时间。<br>对于一个长度为N的数组A，已知<em>A[1，i]（1&lt;i&lt;n）</em>的最大子数组，则<em>A[1,i+1]</em>的最大子数组为<em>A[1,i]</em>的最大子数组或者<em>A[j,i+1]（1&lt;j&lt;i+1）</em></p>
 <p>随着从前往后开始遍历数组，对所经过的数组进行求和，一旦和小于0则把之前的抛掉，重新设置当前点为起点，之所以把之前的全部抛掉而不是抛掉前半部分是因为，和小于0代表有负数元素，且负数元素的比重超过了正数，若负数元素主要分布在前半段，则根据规则，早就小于0了，绝对等不到现在，所以负数元素主要分布在后半段或均匀分布，所以只能全部抛掉。</p>
 <p>动态规划的代码是最短的。</p>
 <pre><code class="lang-C++">    MaxSeq dynamicProgram() const{
