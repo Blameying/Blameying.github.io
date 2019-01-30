@@ -263,7 +263,7 @@
 
     
         <meta property="article:published_time" content="Tue Sep 11 2018 12:34:24 GMT+0800">
-        <meta property="article:modified_time" content="Sun Oct 07 2018 12:43:46 GMT+0800">
+        <meta property="article:modified_time" content="Wed Jan 30 2019 11:49:06 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -286,7 +286,7 @@
     "mainEntityOfPage": "http://note.xblame.top/2018/09/11/Rails-理解/index.html",
     "headline": "Rails-理解",
     "datePublished": "Tue Sep 11 2018 12:34:24 GMT+0800",
-    "dateModified": "Sun Oct 07 2018 12:43:46 GMT+0800",
+    "dateModified": "Wed Jan 30 2019 11:49:06 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "XBlame",
@@ -516,7 +516,7 @@
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <p>Rail 核心目录在于app下面的model,controller,view<br><br><br>是经典的MVC结构，以Model数据为中心，Model通过ActiveRecord模块与数据库连接，不需要自己在Model里定义变量和getter，setter之类的在java中常写的存取函数，只需要在db/migrate目录中定义同名数据库表，接下来便开始忽略与数据库相关的事，暂时将其透明化。controller负责定义一系列与数据相关的动作，组织数据，生成视图。即负责链接数据和视图。<br><br><br>route.rb 负责链接url和controller</p>
-<p><img src="http://pbn2nc8d5.bkt.clouddn.com/github/blog/10-03-3.jpgrails%E7%90%86%E8%A7%A3.png" alt=""></p>
+<p><img src="http://xblame.top:8080/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--76b16363b144860046c8c3790ae4e27a5b6ab37a/10-03-3.jpgrails%E7%90%86%E8%A7%A3.png" alt=""></p>
 <p>view 中指定的视图应当与其在controller中对应的动作存在共享实例变量和几个全局变量，进行数据的交互。</p>
 <p>controller 和 view 的对应关系，model和数据库的对应关系使用约定。一开始觉得体系庞大，难以掌控，我觉得不妨先观察，然后思考，不知所以然的照着教程写一遍不利用后面摆脱固定的模式限制进行自定义。不妨多些勇敢，多尝试，不用觉得与示范做法不一样，这样才能真正的使用。</p>
 

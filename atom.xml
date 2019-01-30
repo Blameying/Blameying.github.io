@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://note.xblame.top/"/>
-  <updated>2018-10-20T02:02:38.479Z</updated>
+  <updated>2019-01-30T03:38:11.006Z</updated>
   <id>http://note.xblame.top/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://note.xblame.top/2018/10/19/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/"/>
     <id>http://note.xblame.top/2018/10/19/设计模式-观察者模式/</id>
     <published>2018-10-19T12:21:14.000Z</published>
-    <updated>2018-10-20T02:02:38.479Z</updated>
+    <updated>2019-01-30T03:38:11.006Z</updated>
     
     <summary type="html">
     
@@ -47,7 +47,7 @@
     <link href="http://note.xblame.top/2018/10/19/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/"/>
     <id>http://note.xblame.top/2018/10/19/设计模式-策略模式/</id>
     <published>2018-10-19T11:58:01.000Z</published>
-    <updated>2018-10-19T12:18:54.813Z</updated>
+    <updated>2019-01-30T03:45:52.770Z</updated>
     
     <summary type="html">
     
@@ -75,7 +75,7 @@
     <link href="http://note.xblame.top/2018/10/18/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/"/>
     <id>http://note.xblame.top/2018/10/18/设计模式-桥接模式/</id>
     <published>2018-10-18T12:43:03.000Z</published>
-    <updated>2018-10-18T13:26:07.490Z</updated>
+    <updated>2019-01-30T03:45:13.670Z</updated>
     
     <summary type="html">
     
@@ -103,7 +103,7 @@
     <link href="http://note.xblame.top/2018/10/18/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/"/>
     <id>http://note.xblame.top/2018/10/18/设计模式-适配器模式/</id>
     <published>2018-10-18T11:04:21.000Z</published>
-    <updated>2018-10-18T13:47:16.820Z</updated>
+    <updated>2019-01-30T03:44:13.950Z</updated>
     
     <summary type="html">
     
@@ -112,7 +112,7 @@
         
         
           &lt;p&gt;适配器并不是一个软件开发的专用术语，而是应用于生活的方方面面，一般用来提供不同接口之间的转接。例如下图：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://pbn2nc8d5.bkt.clouddn.com/zhuanjie.jpg&quot;
+&lt;p&gt;&lt;img
         
       
     
@@ -130,7 +130,7 @@
     <link href="http://note.xblame.top/2018/10/18/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/"/>
     <id>http://note.xblame.top/2018/10/18/设计模式-抽象工厂模式/</id>
     <published>2018-10-18T08:00:18.000Z</published>
-    <updated>2018-10-18T13:25:52.684Z</updated>
+    <updated>2019-01-30T03:36:38.610Z</updated>
     
     <summary type="html">
     
@@ -156,7 +156,7 @@
     <link href="http://note.xblame.top/2018/10/18/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/"/>
     <id>http://note.xblame.top/2018/10/18/设计模式-工厂模式/</id>
     <published>2018-10-18T03:33:39.000Z</published>
-    <updated>2018-10-18T07:57:39.560Z</updated>
+    <updated>2019-01-30T03:37:29.050Z</updated>
     
     <summary type="html">
     
@@ -182,7 +182,7 @@
     <link href="http://note.xblame.top/2018/10/18/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/"/>
     <id>http://note.xblame.top/2018/10/18/设计模式-简单工厂模式/</id>
     <published>2018-10-18T02:11:16.000Z</published>
-    <updated>2018-10-18T03:30:26.910Z</updated>
+    <updated>2019-01-30T03:38:47.870Z</updated>
     
     <summary type="html">
     
@@ -292,7 +292,7 @@
     <link href="http://note.xblame.top/2018/09/25/MRB%E4%B8%BB%E5%BC%95%E5%AF%BC%E8%AE%B0%E5%BD%95/"/>
     <id>http://note.xblame.top/2018/09/25/MRB主引导记录/</id>
     <published>2018-09-25T07:08:13.000Z</published>
-    <updated>2018-10-07T04:45:00.263Z</updated>
+    <updated>2019-01-30T03:47:47.076Z</updated>
     
     <summary type="html">
     
@@ -370,7 +370,7 @@
     <link href="http://note.xblame.top/2018/09/11/Rails-%E7%90%86%E8%A7%A3/"/>
     <id>http://note.xblame.top/2018/09/11/Rails-理解/</id>
     <published>2018-09-11T04:34:24.000Z</published>
-    <updated>2018-10-07T04:43:46.133Z</updated>
+    <updated>2019-01-30T03:49:06.290Z</updated>
     
     <summary type="html">
     
