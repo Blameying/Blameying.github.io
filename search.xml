@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>C++ new和malloc</title>
+      <link href="/2019/03/20/C-new%E5%92%8Cmalloc/"/>
+      <url>/2019/03/20/C-new%E5%92%8Cmalloc/</url>
+      
+        <content type="html"><![CDATA[<h3 id="C-new-和-malloc-区别"><a href="#C-new-和-malloc-区别" class="headerlink" title="C++ new 和 malloc 区别"></a>C++ new 和 malloc 区别</h3><hr><p>new 是 C++ 中的操作符，一般为类的实例变量分配内存，与之对应的内存释放函数是 delete,<br>malloc 是 C 语言的内存分配的函数，进行堆区已映射的内存的管理和采用系统调用增加内存映射区域。</p><h4 id="输入参数上的不同"><a href="#输入参数上的不同" class="headerlink" title="输入参数上的不同:"></a>输入参数上的不同:</h4><ul><li>new 不需要输入需要分配的 size,但 new 确实接受 size 参数，只是不需要手动填写。new 可以有多种<a href="https://code.woboq.org/gcc/include/c++/7.2.1/new.html#120" target="_blank" rel="noopener">重载</a>(overload)</li><li>malloc 需要人为计算需要分配的内存大小</li></ul><h4 id="返回值的不同"><a href="#返回值的不同" class="headerlink" title="返回值的不同"></a>返回值的不同</h4><ul><li>new 操作符返回指向实例化类类型的指针，申请失败时会持续调用 new_handler 回调函数，如果不存在 new_handler 函数则会抛出 bad_alloc 异常，因此针对 new 不需要检测是否分配成功。<a href="https://gcc.gnu.org/viewcvs/gcc/trunk/libstdc%2B%2B-v3/libsupc%2B%2B/new_opa.cc?revision=267494&amp;view=markup" target="_blank" rel="noopener">SRC</a></li></ul><pre><code class="lang-cpp">_GLIBCXX_WEAK_DEFINITION void *    operator new (std::size_t sz, std::align_val_t al)    {      std::size_t align = (std::size_t)al;      /* Alignment must be a power of two.  */      /* XXX This should be checked by the compiler (PR 86878).  */      if (__builtin_expect (!std::__ispow2(align), false))        _GLIBCXX_THROW_OR_ABORT(bad_alloc());      /* malloc (0) is unpredictable; avoid it.  */      if (__builtin_expect (sz == 0, false))        sz = 1;    #if _GLIBCXX_HAVE_ALIGNED_ALLOC    # ifdef _AIX      /* AIX 7.2.0.0 aligned_alloc incorrectly has posix_memalign&#39;s requirement       * that alignment is a multiple of sizeof(void*).  */      if (align &lt; sizeof(void*))        align = sizeof(void*);    # endif      /* C11: the value of size shall be an integral multiple of alignment.  */      sz = (sz + align - 1) &amp; ~(align - 1);    #endif      void *p;      while ((p = __gnu_cxx::aligned_alloc (align, sz)) == nullptr)        {          new_handler handler = std::get_new_handler ();          if (! handler)            _GLIBCXX_THROW_OR_ABORT(bad_alloc());          handler ();        }      return p;    }</code></pre><ul><li>malloc 返回 void* 指针，需要强制类型转化为需要的指针,失败时返回 NULL，需要自己检测。</li></ul><h4 id="分配内存位置的不同"><a href="#分配内存位置的不同" class="headerlink" title="分配内存位置的不同"></a>分配内存位置的不同</h4><ul><li>new 在<a href="http://www.gotw.ca/gotw/009.htm" target="_blank" rel="noopener">自由存储区</a>进行分配，<strong>自由存储区</strong>是 C++中的一个抽象层，并不是操作系统上给进程分配的空间存在叫做自由存储区的位置，作为一个抽象，它的底层可以指向堆区或者全局变量区。但也存在有的 C++库实现使用的是 malloc 在堆上直接分配</li><li>malloc 是在堆上分配存储的。</li></ul><h4 id="行为方式"><a href="#行为方式" class="headerlink" title="行为方式"></a>行为方式</h4><ul><li>new 在完成分配内存任务后会调用类的构造函数进行数据初始化，delete在调用后会先调用析构函数，然后释放内存。</li><li>malloc 单纯分配内存，不做任何初始化，需要手动调用memset等函数赋予初始值</li></ul><h4 id="数组相关"><a href="#数组相关" class="headerlink" title="数组相关"></a>数组相关</h4><ul><li>new[] 会在分配内存后遍历调用构造函数,delete[] 会遍历调用析构函数</li><li>malloc 会直接清空数组的所有内存，不需要特殊指定。</li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> C++,new,malloc </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>算法学习-寻找最大子数组和</title>
       <link href="/2019/01/30/%E6%9C%80%E5%A4%A7%E8%BF%9E%E7%BB%AD%E5%AD%90%E6%95%B0%E7%BB%84%E5%92%8C/"/>
       <url>/2019/01/30/%E6%9C%80%E5%A4%A7%E8%BF%9E%E7%BB%AD%E5%AD%90%E6%95%B0%E7%BB%84%E5%92%8C/</url>

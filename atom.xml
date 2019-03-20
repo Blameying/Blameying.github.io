@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://note.xblame.top/"/>
-  <updated>2019-01-30T09:31:52.210Z</updated>
+  <updated>2019-03-20T04:14:58.502Z</updated>
   <id>http://note.xblame.top/</id>
   
   <author>
@@ -17,10 +17,34 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>C++ new和malloc</title>
+    <link href="http://note.xblame.top/2019/03/20/C-new%E5%92%8Cmalloc/"/>
+    <id>http://note.xblame.top/2019/03/20/C-new和malloc/</id>
+    <published>2019-03-20T02:09:56.000Z</published>
+    <updated>2019-03-20T04:14:58.502Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;C-new-和-malloc-区别&quot;&gt;&lt;a href=&quot;#C-new-和-malloc-区别&quot; class=&quot;headerlink&quot; title=&quot;C++ new 和 malloc 区别&quot;&gt;&lt;/a&gt;C++ new 和 malloc
+        
+      
+    
+    </summary>
+    
+    
+      <category term="C++,new,malloc" scheme="http://note.xblame.top/tags/C-new-malloc/"/>
+    
+  </entry>
+  
+  <entry>
     <title>算法学习-寻找最大子数组和</title>
     <link href="http://note.xblame.top/2019/01/30/%E6%9C%80%E5%A4%A7%E8%BF%9E%E7%BB%AD%E5%AD%90%E6%95%B0%E7%BB%84%E5%92%8C/"/>
     <id>http://note.xblame.top/2019/01/30/最大连续子数组和/</id>
-    <published>2019-01-30T09:31:52.217Z</published>
+    <published>2019-01-30T09:31:52.210Z</published>
     <updated>2019-01-30T09:31:52.210Z</updated>
     
     <summary type="html">
