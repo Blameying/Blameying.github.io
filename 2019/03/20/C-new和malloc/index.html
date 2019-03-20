@@ -263,7 +263,7 @@
 
     
         <meta property="article:published_time" content="Wed Mar 20 2019 10:09:56 GMT+0800">
-        <meta property="article:modified_time" content="Wed Mar 20 2019 12:14:58 GMT+0800">
+        <meta property="article:modified_time" content="Wed Mar 20 2019 12:21:26 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -286,7 +286,7 @@
     "mainEntityOfPage": "http://note.xblame.top/2019/03/20/C-new和malloc/index.html",
     "headline": "C++ new和malloc",
     "datePublished": "Wed Mar 20 2019 10:09:56 GMT+0800",
-    "dateModified": "Wed Mar 20 2019 12:14:58 GMT+0800",
+    "dateModified": "Wed Mar 20 2019 12:21:26 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "XBlame",
@@ -369,7 +369,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#C-new-和-malloc-区别"><span class="post-toc-number">1.</span> <span class="post-toc-text">C++ new 和 malloc 区别</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#输入参数上的不同"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">输入参数上的不同:</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#返回值的不同"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">返回值的不同</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#分配内存位置的不同"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">分配内存位置的不同</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#行为方式"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">行为方式</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#数组相关"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">数组相关</span></a></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#输入参数上的不同"><span class="post-toc-number">1.</span> <span class="post-toc-text">输入参数上的不同:</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#返回值的不同"><span class="post-toc-number">2.</span> <span class="post-toc-text">返回值的不同</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#分配内存位置的不同"><span class="post-toc-number">3.</span> <span class="post-toc-text">分配内存位置的不同</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#行为方式"><span class="post-toc-number">4.</span> <span class="post-toc-text">行为方式</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#数组相关"><span class="post-toc-number">5.</span> <span class="post-toc-text">数组相关</span></a></li></ol>
     </ul>
     
 
@@ -523,14 +523,14 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h3 id="C-new-和-malloc-区别"><a href="#C-new-和-malloc-区别" class="headerlink" title="C++ new 和 malloc 区别"></a>C++ new 和 malloc 区别</h3><hr>
-<p>new 是 C++ 中的操作符，一般为类的实例变量分配内存，与之对应的内存释放函数是 delete,<br>malloc 是 C 语言的内存分配的函数，进行堆区已映射的内存的管理和采用系统调用增加内存映射区域。</p>
+        <p>new 是 C++ 中的操作符，一般为类的实例变量分配内存，与之对应的内存释放函数是 delete,<br>malloc 是 C 语言的内存分配的函数，进行堆区已映射的内存的管理和采用系统调用增加内存映射区域。</p>
 <h4 id="输入参数上的不同"><a href="#输入参数上的不同" class="headerlink" title="输入参数上的不同:"></a>输入参数上的不同:</h4><ul>
 <li>new 不需要输入需要分配的 size,但 new 确实接受 size 参数，只是不需要手动填写。new 可以有多种<a href="https://code.woboq.org/gcc/include/c++/7.2.1/new.html#120" target="_blank" rel="noopener">重载</a>(overload)</li>
 <li>malloc 需要人为计算需要分配的内存大小</li>
 </ul>
 <h4 id="返回值的不同"><a href="#返回值的不同" class="headerlink" title="返回值的不同"></a>返回值的不同</h4><ul>
 <li>new 操作符返回指向实例化类类型的指针，申请失败时会持续调用 new_handler 回调函数，如果不存在 new_handler 函数则会抛出 bad_alloc 异常，因此针对 new 不需要检测是否分配成功。<a href="https://gcc.gnu.org/viewcvs/gcc/trunk/libstdc%2B%2B-v3/libsupc%2B%2B/new_opa.cc?revision=267494&amp;view=markup" target="_blank" rel="noopener">SRC</a></li>
+<li>malloc 返回 void* 指针，需要强制类型转化为需要的指针,失败时返回 NULL，需要自己检测。</li>
 </ul>
 <pre><code class="lang-cpp">_GLIBCXX_WEAK_DEFINITION void *
     operator new (std::size_t sz, std::align_val_t al)
@@ -570,16 +570,13 @@
       return p;
     }
 </code></pre>
-<ul>
-<li>malloc 返回 void* 指针，需要强制类型转化为需要的指针,失败时返回 NULL，需要自己检测。</li>
-</ul>
 <h4 id="分配内存位置的不同"><a href="#分配内存位置的不同" class="headerlink" title="分配内存位置的不同"></a>分配内存位置的不同</h4><ul>
 <li>new 在<a href="http://www.gotw.ca/gotw/009.htm" target="_blank" rel="noopener">自由存储区</a>进行分配，<strong>自由存储区</strong>是 C++中的一个抽象层，并不是操作系统上给进程分配的空间存在叫做自由存储区的位置，作为一个抽象，它的底层可以指向堆区或者全局变量区。但也存在有的 C++库实现使用的是 malloc 在堆上直接分配</li>
 <li>malloc 是在堆上分配存储的。</li>
 </ul>
 <h4 id="行为方式"><a href="#行为方式" class="headerlink" title="行为方式"></a>行为方式</h4><ul>
-<li>new 在完成分配内存任务后会调用类的构造函数进行数据初始化，delete在调用后会先调用析构函数，然后释放内存。</li>
-<li>malloc 单纯分配内存，不做任何初始化，需要手动调用memset等函数赋予初始值</li>
+<li>new 在完成分配内存任务后会调用类的构造函数进行数据初始化，delete 在调用后会先调用析构函数，然后释放内存。</li>
+<li>malloc 单纯分配内存，不做任何初始化，需要手动调用 memset 等函数赋予初始值</li>
 </ul>
 <h4 id="数组相关"><a href="#数组相关" class="headerlink" title="数组相关"></a>数组相关</h4><ul>
 <li>new[] 会在分配内存后遍历调用构造函数,delete[] 会遍历调用析构函数</li>
@@ -641,6 +638,14 @@
             <!-- Post Prev & Next Nav -->
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
+    
+        <a href="/2019/03/20/C-析构函数-虚和非虚/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
     
 
     <!-- Section Spacer -->
@@ -740,7 +745,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2019/03/">三月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">十月 2018<span class="sidebar_archives-count">10</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">6</span></a>
+                <a class="sidebar_archives-link" href="/archives/2019/03/">三月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">十月 2018<span class="sidebar_archives-count">10</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">6</span></a>
             </li></ul>
         </li>
         
@@ -758,7 +763,7 @@
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/Boost/">Boost<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/代码/">代码<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/操作系统/">操作系统<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/疑难杂症/">疑难杂症<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/设计模式/">设计模式<span class="sidebar_archives-count">7</span></a>
+                <a class="sidebar_archives-link" href="/categories/Boost/">Boost<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/C/">C++<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/代码/">代码<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/操作系统/">操作系统<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/疑难杂症/">疑难杂症<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/设计模式/">设计模式<span class="sidebar_archives-count">7</span></a>
             </li></ul>
         </li>
         

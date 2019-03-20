@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://note.xblame.top/"/>
-  <updated>2019-03-20T04:14:58.502Z</updated>
+  <updated>2019-03-20T13:53:05.243Z</updated>
   <id>http://note.xblame.top/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>C++ new和malloc</title>
-    <link href="http://note.xblame.top/2019/03/20/C-new%E5%92%8Cmalloc/"/>
-    <id>http://note.xblame.top/2019/03/20/C-new和malloc/</id>
-    <published>2019-03-20T02:09:56.000Z</published>
-    <updated>2019-03-20T04:14:58.502Z</updated>
+    <title>C++析构函数-虚和非虚</title>
+    <link href="http://note.xblame.top/2019/03/20/C-%E6%9E%90%E6%9E%84%E5%87%BD%E6%95%B0-%E8%99%9A%E5%92%8C%E9%9D%9E%E8%99%9A/"/>
+    <id>http://note.xblame.top/2019/03/20/C-析构函数-虚和非虚/</id>
+    <published>2019-03-20T04:17:35.000Z</published>
+    <updated>2019-03-20T13:53:05.243Z</updated>
     
     <summary type="html">
     
@@ -29,11 +29,44 @@
       
         
         
-          &lt;h3 id=&quot;C-new-和-malloc-区别&quot;&gt;&lt;a href=&quot;#C-new-和-malloc-区别&quot; class=&quot;headerlink&quot; title=&quot;C++ new 和 malloc 区别&quot;&gt;&lt;/a&gt;C++ new 和 malloc
+          &lt;p&gt;C++的类析构函数通常都是虚函数。这是因为虚函数是动态绑定的。如果一个类有可能成为基类则其析构函数必须为虚函数，如果不可能成为基类，则无所谓。实验如下:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-cpp&quot;&gt;class A{
+public:
+    A(){
+ 
         
       
     
     </summary>
+    
+      <category term="C++" scheme="http://note.xblame.top/categories/C/"/>
+    
+    
+      <category term="C++,析构函数,虚函数" scheme="http://note.xblame.top/tags/C-%E6%9E%90%E6%9E%84%E5%87%BD%E6%95%B0-%E8%99%9A%E5%87%BD%E6%95%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C++ new和malloc</title>
+    <link href="http://note.xblame.top/2019/03/20/C-new%E5%92%8Cmalloc/"/>
+    <id>http://note.xblame.top/2019/03/20/C-new和malloc/</id>
+    <published>2019-03-20T02:09:56.000Z</published>
+    <updated>2019-03-20T04:21:26.461Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;new 是 C++ 中的操作符，一般为类的实例变量分配内存，与之对应的内存释放函数是 delete,&lt;br&gt;malloc 是 C 语言的内存分配的函数，进行堆区已映射的内存的管理和采用系统调用增加内存映射区域。&lt;/p&gt;
+&lt;h4 id=&quot;输入参数上的不同&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="C++" scheme="http://note.xblame.top/categories/C/"/>
     
     
       <category term="C++,new,malloc" scheme="http://note.xblame.top/tags/C-new-malloc/"/>
