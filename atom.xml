@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://note.xblame.top/"/>
-  <updated>2019-04-11T09:30:42.985Z</updated>
+  <updated>2019-04-21T04:06:32.582Z</updated>
   <id>http://note.xblame.top/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux下GNU开发ARM</title>
+    <link href="http://note.xblame.top/2019/04/21/Linux%E4%B8%8BGNU%E5%BC%80%E5%8F%91ARM/"/>
+    <id>http://note.xblame.top/2019/04/21/Linux下GNU开发ARM/</id>
+    <published>2019-04-21T02:48:00.000Z</published>
+    <updated>2019-04-21T04:06:32.582Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;该篇实现的平台是:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Archlinux kernel:5.0.7-arch1-1-ARCH&lt;/li&gt;
+&lt;li&gt;arm-none-eabi-gcc&lt;/li&gt;
+&lt;li&gt;stm32CubeMx
+        
+      
+    
+    </summary>
+    
+      <category term="操作系统" scheme="http://note.xblame.top/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+    
+      <category term="linux,arm,gnu" scheme="http://note.xblame.top/tags/linux-arm-gnu/"/>
+    
+  </entry>
   
   <entry>
     <title>借助cortex-m3内核理解单核多线程实现细节</title>
@@ -525,35 +555,6 @@ public:
     
     
       <category term="class,python,self" scheme="http://note.xblame.top/tags/class-python-self/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Rails 多对多 自联结 建立好友关系表</title>
-    <link href="http://note.xblame.top/2018/09/03/Rails-%E5%A4%9A%E5%AF%B9%E5%A4%9A-%E8%87%AA%E8%81%94%E7%BB%93-%E5%BB%BA%E7%AB%8B%E5%A5%BD%E5%8F%8B%E5%85%B3%E7%B3%BB%E8%A1%A8-md/"/>
-    <id>http://note.xblame.top/2018/09/03/Rails-多对多-自联结-建立好友关系表-md/</id>
-    <published>2018-09-03T12:00:00.000Z</published>
-    <updated>2018-10-07T04:17:08.463Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3&gt;Model&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-Ruby &quot;&gt;class User &amp;lt; ApplicationRecord
-has_many :a_friends, class_name:
-        
-      
-    
-    </summary>
-    
-      <category term="代码" scheme="http://note.xblame.top/categories/%E4%BB%A3%E7%A0%81/"/>
-    
-    
-      <category term="rails,多对多,自联结,好友关系" scheme="http://note.xblame.top/tags/rails-%E5%A4%9A%E5%AF%B9%E5%A4%9A-%E8%87%AA%E8%81%94%E7%BB%93-%E5%A5%BD%E5%8F%8B%E5%85%B3%E7%B3%BB/"/>
     
   </entry>
   
