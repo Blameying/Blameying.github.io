@@ -263,7 +263,7 @@
 
     
         <meta property="article:published_time" content="Sun Apr 21 2019 10:48:00 GMT+0800">
-        <meta property="article:modified_time" content="Sun Apr 21 2019 12:06:32 GMT+0800">
+        <meta property="article:modified_time" content="Sun Apr 21 2019 12:10:48 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -286,7 +286,7 @@
     "mainEntityOfPage": "http://note.xblame.top/2019/04/21/Linux下GNU开发ARM/index.html",
     "headline": "Linux下GNU开发ARM",
     "datePublished": "Sun Apr 21 2019 10:48:00 GMT+0800",
-    "dateModified": "Sun Apr 21 2019 12:06:32 GMT+0800",
+    "dateModified": "Sun Apr 21 2019 12:10:48 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "XBlame",
@@ -369,7 +369,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#GNU-工具链和-Keil，IAR-的区别是什么？"><span class="post-toc-number">1.</span> <span class="post-toc-text">GNU 工具链和 Keil，IAR 的区别是什么？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#解决-Makefile-和-linkerscript"><span class="post-toc-number">2.</span> <span class="post-toc-text">解决 Makefile 和 linkerscript</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#GNU-工具链和-Keil，IAR-的区别是什么？"><span class="post-toc-number">1.</span> <span class="post-toc-text">GNU 工具链和 Keil，IAR 的区别是什么？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#解决-Makefile-和-linkerscript"><span class="post-toc-number">2.</span> <span class="post-toc-text">解决 Makefile 和 linkerscript</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#编译下载"><span class="post-toc-number">3.</span> <span class="post-toc-text">编译下载</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#调试"><span class="post-toc-number">4.</span> <span class="post-toc-text">调试</span></a></li></ol>
     </ul>
     
 
@@ -534,7 +534,7 @@
 <p>选择好芯片型号后选择右上角 Start Project</p>
 <p><img src="http://xblame.top:8080/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBJZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--6f211d7acc8f4c53b60f31f6757b9fc2e4336801/2019-04-21%2011-31-25%20%E7%9A%84%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png" alt=""></p>
 <p>Toolchain/IDE 一栏选择 Makefile,其他的可以根据自己需要配置，然后点击右上角 Generate Cide 生成代码。STM32CubeMx 的任务到此结束，接下来是 arm-none-eabi-gcc 的任务了。</p>
-<p>如果 arm-none-eabi-gcc 在环境变量里的话，Makefile 就不需要变动了，如果不在，需要自己指定路径</p>
+<h3 id="编译下载"><a href="#编译下载" class="headerlink" title="编译下载"></a>编译下载</h3><p>如果 arm-none-eabi-gcc 在环境变量里的话，Makefile 就不需要变动了，如果不在，需要自己指定路径</p>
 <pre><code class="lang-makefile">GCC_PATH = /xxx/xxx
 </code></pre>
 <p>此处改为你自己的路径，最后一级是 gcc 所在目录，而不是具体的可执行文件。<br>然后在该目录下执行 make 命令，输出信息最后几行显示了 elf,hex,bin 文件所在的目录。</p>
@@ -553,8 +553,8 @@ source [find target/stm32f4x.cfg]
 <pre><code>openocd -f 我的配置文件路径
 </code></pre><p><img src="http://xblame.top:8080/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBKQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--3c7935cbbdfde5cf6255ef7321643c3b777d9c50/2019-04-21%2011-49-08%20%E7%9A%84%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png" alt=""></p>
 <p>连接成功后的信息。</p>
-<p>openocd会在系统的4444端口和3333端口开发两个服务，4444端口用来执行一些指令，比如中断，恢复，刷写flash等等，3333端口用来提供gdbserver服务，用来调试。这里我们先看一下如何下载</p>
-<p>使用telnet连接4444端口</p>
+<p>openocd 会在系统的 4444 端口和 3333 端口开发两个服务，4444 端口用来执行一些指令，比如中断，恢复，刷写 flash 等等，3333 端口用来提供 gdbserver 服务，用来调试。这里我们先看一下如何下载</p>
+<p>使用 telnet 连接 4444 端口</p>
 <pre><code class="lang-shell">telnet 127.0.0.1 4444
 </code></pre>
 <p><img src="http://xblame.top:8080/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBKUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b72a35c400445232aa766dc724a2a57b8a0fbc1b/2019-04-21%2011-54-13%20%E7%9A%84%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png" alt=""></p>
@@ -577,21 +577,21 @@ echo &quot;reset&quot;) | telnet 127.0.0.1 4444 &gt;/dev/null
 
 echo &quot;Download finished!&quot;
 </code></pre>
-<p>下载说完了说一下调试，调试使用的是arm-none-eabi-gdb程序，</p>
+<h3 id="调试"><a href="#调试" class="headerlink" title="调试"></a>调试</h3><p>解决了下载了解一下调试，调试使用的是 arm-none-eabi-gdb 程序，</p>
 <pre><code class="lang-shell">arm-none-eabi-gdb ./build/STM32F429.elf
 </code></pre>
-<p>如果想要图形界面可以加—tui参数<br>进入gdb 以后要进行gdbserver的连接</p>
-<p>输入 </p>
+<p>如果想要图形界面可以加—tui 参数<br>进入 gdb 以后要进行 gdbserver 的连接</p>
+<p>输入</p>
 <pre><code class="lang-shell">target remote 127.0.0.1:3333
 </code></pre>
-<p>可以通过monitor对设备发送指令，在arm的调试里是没有run指令的，可以通过</p>
+<p>可以通过 monitor 对设备发送指令，在 arm 的调试里是没有 run 指令的，可以通过</p>
 <pre><code class="lang-shell">monitor reset
 </code></pre>
 <p>实现。如果需要回到程序起始位置并停留在那，可以</p>
 <pre><code class="lang-shell">monitor reset halt
 </code></pre>
-<p>其他的查看断点，设置断点，查看源码等操作和pc端gdb并无区别。</p>
-<p>这篇只是描述了流程，接下来几篇可能会分析一下启动时的汇编代码和linkerscript内容编写。</p>
+<p>其他的查看断点，设置断点，查看源码等操作和 pc 端 gdb 并无区别。</p>
+<p>这篇只是描述了流程，接下来几篇可能会分析一下启动时的汇编代码和 linkerscript 内容编写。</p>
 
         
                 <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;">
