@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://note.xblame.top/"/>
-  <updated>2019-04-21T04:10:48.628Z</updated>
+  <updated>2019-08-10T14:26:44.633Z</updated>
   <id>http://note.xblame.top/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>After实习一个月</title>
+    <link href="http://note.xblame.top/2019/08/10/After%E5%AE%9E%E4%B9%A0%E4%B8%80%E4%B8%AA%E6%9C%88/"/>
+    <id>http://note.xblame.top/2019/08/10/After实习一个月/</id>
+    <published>2019-08-10T12:05:32.000Z</published>
+    <updated>2019-08-10T14:26:44.633Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;这一年的七月初我走出校门，来到公司实习，到现在已经一个月了。感觉这一个月过的很快，变化很快，接触到的东西很多。可能就是因为太充实了，还没等我考虑时间，时间已经过去了，记录一下接触到的人和事，算是成长中的一份记忆备份。&lt;/p&gt;
+&lt;p&gt;七月四日，我来到苏州华为研究所实习，以下简
+        
+      
+    
+    </summary>
+    
+      <category term="生活" scheme="http://note.xblame.top/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Linux下GNU开发ARM</title>
@@ -527,34 +552,6 @@ public:
     
     
       <category term="Rails" scheme="http://note.xblame.top/tags/Rails/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>python 类中方法参数 self</title>
-    <link href="http://note.xblame.top/2018/09/06/python-%E7%B1%BB%E4%B8%AD%E6%96%B9%E6%B3%95%E5%8F%82%E6%95%B0-self/"/>
-    <id>http://note.xblame.top/2018/09/06/python-类中方法参数-self/</id>
-    <published>2018-09-06T06:50:00.000Z</published>
-    <updated>2018-10-07T04:22:00.320Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3&gt;内存&lt;/h3&gt;
-
-&lt;p&gt;Python
-        
-      
-    
-    </summary>
-    
-      <category term="代码" scheme="http://note.xblame.top/categories/%E4%BB%A3%E7%A0%81/"/>
-    
-    
-      <category term="class,python,self" scheme="http://note.xblame.top/tags/class-python-self/"/>
     
   </entry>
   
